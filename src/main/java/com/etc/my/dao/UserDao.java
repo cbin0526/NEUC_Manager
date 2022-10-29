@@ -8,5 +8,7 @@ public interface UserDao {
 
     List<User> queryAllUser();
 
+    User queryUser(String user_phone);
+
 
 }
