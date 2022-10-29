@@ -12,6 +12,7 @@ public class Push {
     private Double push_price;//想要的价格
     private User push_user;//推送的用户
     private String push_status;//推送的状态
+    private Car push_car;//推送的车辆
 
     public Integer getPush_id() {
         return push_id;
@@ -67,5 +68,13 @@ public class Push {
 
     public void setPush_status(String push_status) {
         this.push_status = push_status;
+    }
+
+    public Car getPush_car() {
+        return push_car;
+    }
+
+    public void setPush_car(Car push_car) {
+        this.push_car = push_car;
     }
 }
