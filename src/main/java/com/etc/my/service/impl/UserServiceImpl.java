@@ -28,4 +28,14 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return dao.queryAllUser();
     }
+
+    @Override
+    public User getUser(String user_phone) {
+        if(user_phone==null){
+            return null;
+        }else{
+            return dao.queryUser(user_phone);
+        }
+
+    }
 }
