@@ -82,7 +82,7 @@
                             <a class="J_menuItem" href="addCar.jsp">添加车辆</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="yifahuoliebiao.html">编辑类型</a>
+                            <a class="J_menuItem" href="carlist.jsp">车辆列表</a>
                         </li>
 
                     </ul>

@@ -42,12 +42,11 @@
             // preview4.src = reader.result;
             // preview5.src = reader.result;
 
-
         }
         if (file) {
             reader.readAsDataURL(file);
         } else {
-                      preview.src = "";
+            preview.src = "";
             // preview2.src = "";
             // preview3.src = "";
             // preview4.src = "";
@@ -64,7 +63,7 @@
         // var preview3 = document.getElementById("appeal2");
         // var preview4 = document.getElementById("interior2");
         // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector('input[type=file]').files[0];
+        var file  = document.querySelector('input[type=file]').files[1];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -95,7 +94,7 @@
         var preview3 = document.getElementById("appeal2");
         // var preview4 = document.getElementById("interior2");
         // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector('input[type=file]').files[0];
+        var file  = document.querySelector('input[type=file]').files[2];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -126,7 +125,7 @@
         // var preview3 = document.getElementById("appeal2");
         var preview4 = document.getElementById("interior1");
         // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector('input[type=file]').files[0];
+        var file  = document.querySelector("#interior1").files[3];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -157,7 +156,7 @@
         // var preview3 = document.getElementById("appeal2");
         // var preview4 = document.getElementById("interior2");
         var preview5 = document.getElementById("interior2");
-        var file  = document.querySelector('input[type=file]').files[0];
+        var file  = document.querySelector('input[type=file]').files[4];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -230,7 +229,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>上牌时间：</label>
                             <div class="col-sm-8">
-                                <input  name="car_regist" id="car_regist" placeholder=" 请输入上牌时间" type="datetime-local" class="form-control">
+                                <input  name="car_regist" id="car_regist" placeholder=" 请输入上牌时间" type="date" class="form-control">
                                 <span class="help-block m-b-none"></span>
                             </div>
                         </div>
@@ -377,7 +376,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆生产时间：</label>
                             <div class="col-sm-8">
-                                <input  name="car_producetime" id="car_producetime" placeholder=" 请输入车辆生产时间" type="datetime-local" class="form-control">
+                                <input  name="car_producetime" id="car_producetime" placeholder=" 请输入车辆生产时间" type="date" class="form-control">
                                 <span class="help-block m-b-none"></span>
                             </div>
                         </div>
@@ -391,7 +390,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆上架时间：</label>
                             <div class="col-sm-8">
-                                <input  name="car_time" id="car_time" placeholder=" 请输入车辆上架时间" type="datetime-local" class="form-control">
+                                <input  name="car_time" id="car_time" placeholder=" 请输入车辆上架时间" type="date" class="form-control">
                                 <span class="help-block m-b-none"></span>
                             </div>
                         </div>
