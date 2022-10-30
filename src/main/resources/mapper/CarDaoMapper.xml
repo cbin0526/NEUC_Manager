@@ -1,20 +1,84 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace命名空间，为了对sql语句进行隔离，方便管理 ，mapper开发dao方式，使用namespace有特殊作用 -->
 <mapper namespace="com.etc.my.dao.CarDao">
-<!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象
-mapper.xml以statement为单位管理sql语句
- -->
+    <!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象
+    mapper.xml以statement为单位管理sql语句
+     -->
 
-
+<!--添加车辆信息-->
     <insert id="addCar" parameterType="carDto">
      insert into t_car (car_name,car_brand,car_dept,car_price,car_regist,car_mile,car_at,car_dc,car_newprice,
      car_transfer,car_power,car_adress,car_endurance,car_capacity,car_color,car_producetime,car_keynum,car_sale,car_status,car_time)
        values (#{car_name},#{car_brand},#{car_dept},#{car_price},#{car_regist},#{car_mile},#{car_at},#{car_dc},#{car_newprice},#{car_transfer},
         #{car_power},#{car_adress},#{car_endurance},#{car_capacity},#{car_color},#{car_producetime},#{car_keynum},#{car_sale},#{car_status},#{car_time})
     </insert>
+    <!--动态查询车辆信息-->
+    <select id="queryCar" resultType="car" parameterType="carDto">
+        select * from selectsomemassage
+        <where>
+
+            <if test="car_name!=null">
+                and car_name like #{car_name}
+
+            </if>
+            <if test="car_brand!=null">
+                and car_brand like #{car_brand}
+
+            </if>
+            <if test="car_dept!=null">
+                and car_dept like #{car_dept}
+
+            </if>
+            <if test="car_adress!=null">
+                and car_adress like#{car_adress}
+
+            </if>
+            <if test="car_regist!=null">
+                and car_regist like #{car_regist}
+
+            </if>
+            <if test="car_endurance!=null">
+                and car_endurance like #{car_endurance}
+
+            </if>
+            <if test="car_color!=null">
+                and car_color like #{car_color}
+
+            </if>
+            <if test="car_producetime!=null">
+                and car_producetime like #{car_producetime}
+
+            </if>
+            <if test="car_power!=null">
+                and car_power like #{car_power}
+
+            </if>
+            <if test="car_status!=null">
+                and car_status like #{car_status}
+
+            </if>
+        </where>
+        limit #{page},#{size}
+    </select>
+<!--获取车辆总条数-->
+    <select id="getCarCount" resultType="long">
+    select count(*) as allcount from t_car
+    </select>
+    <!--根据id修改车辆信息-->
+    <update id="updateCar" parameterType="carDto">
+     update t_car set car_name=#{car_name},car_brand=#{car_brand},car_dept=#{car_dept},car_price=#{car_price},car_regist=#{car_regist},car_mile=#{car_mile},car_at=#{car_at},car_dc=#{car_dc},car_newprice=#{car_newprice},
+      car_transfer=#{car_transfer},car_power=#{car_power},car_adress=#{car_adress},car_endurance=#{car_endurance},car_capacity=#{car_capacity},car_color=#{car_color},car_producetime=#{car_producetime},car_keynum=#{car_keynum},car_status=#{car_status},car_time=#{car_time}
+      where car_id=#{car_id}
+    </update>
+    <!--根据id获取车辆信息-->
+    <select id="getCar" resultType="carAndPicDto">
+        select c.*,u.user_phone,p.* FROM t_car as c inner JOIN t_user as u on u.user_id=c.car_sale inner JOIN t_pic as p on c.car_id=p.pic_car where c.car_id=#{id}
+    </select>
+
+
 
 </mapper>
 

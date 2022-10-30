@@ -7,9 +7,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象
 mapper.xml以statement为单位管理sql语句
  -->
+    <!--添加图片库信息-->
 <insert id="addPic" parameterType="picDto2">
     insert into t_pic(pic_main,pic_appea1,pic_appea2,pic_interior1,pic_interior2,pic_car)
         values (#{pic_main},#{pic_appea1},#{pic_appea2},#{pic_interior1},#{pic_interior2},#{pic_car})
 </insert>
+    <!--修改图片库信息-->
+    <update id="updatePic" parameterType="picDto2">
+       update  t_pic set pic_main=#{pic_main},pic_appea1=#{pic_appea1},pic_appea2=#{pic_appea2},pic_interior1=#{pic_interior1},pic_interior2=#{pic_interior2}
+       where pic_id=#{pic_id}
+
+    </update>
 </mapper>
 
