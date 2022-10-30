@@ -1,10 +1,12 @@
 package com.etc.my.dto;
 
 import com.etc.my.entity.Car;
+import com.etc.my.entity.User;
 
-import java.math.BigDecimal;
-
-public class CarDto {
+/**
+ * 汽车信息
+ */
+public class CarAndPicDto {
 
     private Integer car_id;//车辆id
     private String car_name;//车辆名称
@@ -24,42 +26,100 @@ public class CarDto {
     private String car_color;//车辆颜色
     private String car_producetime;//车辆产出时间
     private Integer car_keynum;//车辆钥匙数量
+    private Integer page;
+    private Integer size;
+    private String key="";
     private Integer car_sale;//卖家
     private Integer car_buy;//买家
     private String car_status;//状态
     private String car_time;//上架时间
-    private Integer page;
-    private Integer size;
-    private String key="";
-    private String s_city;//市
-    private String phone;//联系电话
-    private String user_name;
-    private Integer flag;
-    private Integer maxPage;
+    private Integer pic_id;//图片id
+    private String pic_main;//车辆主图
+    private String pic_appea1;//车辆外观1
+    private String pic_appea2;//车辆外观2
+    private String pic_interior1;//车辆内饰1
+    private String  pic_interior2;//车辆内饰2
+    private Integer pic_car;//车辆id
+    private String user_phone;//联系电话
 
-
-    public Integer getMaxPage() {
-        return maxPage;
+    public Integer getCar_sale() {
+        return car_sale;
     }
 
-    public void setMaxPage(Integer maxPage) {
-        this.maxPage = maxPage;
+    public Integer getCar_buy() {
+        return car_buy;
     }
 
-    public Integer getFlag() {
-        return flag;
+    public String getUser_phone() {
+        return user_phone;
     }
 
-    public void setFlag(Integer flag) {
-        this.flag = flag;
+    public void setUser_phone(String user_phone) {
+        this.user_phone = user_phone;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public void setCar_sale(Integer car_sale) {
+        this.car_sale = car_sale;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setCar_buy(Integer car_buy) {
+        this.car_buy = car_buy;
+    }
+
+    public Integer getPic_id() {
+        return pic_id;
+    }
+
+    public void setPic_id(Integer pic_id) {
+        this.pic_id = pic_id;
+    }
+
+    public String getPic_main() {
+        return pic_main;
+    }
+
+    public void setPic_main(String pic_main) {
+        this.pic_main = pic_main;
+    }
+
+    public String getPic_appea1() {
+        return pic_appea1;
+    }
+
+    public void setPic_appea1(String pic_appea1) {
+        this.pic_appea1 = pic_appea1;
+    }
+
+    public String getPic_appea2() {
+        return pic_appea2;
+    }
+
+    public void setPic_appea2(String pic_appea2) {
+        this.pic_appea2 = pic_appea2;
+    }
+
+    public String getPic_interior1() {
+        return pic_interior1;
+    }
+
+    public void setPic_interior1(String pic_interior1) {
+        this.pic_interior1 = pic_interior1;
+    }
+
+    public String getPic_interior2() {
+        return pic_interior2;
+    }
+
+    public void setPic_interior2(String pic_interior2) {
+        this.pic_interior2 = pic_interior2;
+    }
+
+    public Integer getPic_car() {
+        return pic_car;
+    }
+
+    public void setPic_car(Integer pic_car) {
+        this.pic_car = pic_car;
     }
 
     public Integer getPage() {
@@ -84,30 +144,6 @@ public class CarDto {
 
     public void setKey(String key) {
         this.key = key;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getS_city() {
-        return s_city;
-    }
-
-    public void setS_city(String s_city) {
-        this.s_city = s_city;
-    }
-
-    public Integer getCar_buy() {
-        return car_buy;
-    }
-
-    public void setCar_buy(Integer car_buy) {
-        this.car_buy = car_buy;
     }
 
     public Integer getCar_id() {
@@ -256,13 +292,6 @@ public class CarDto {
         this.car_keynum = car_keynum;
     }
 
-    public Integer getCar_sale() {
-        return car_sale;
-    }
-
-    public void setCar_sale(Integer car_sale) {
-        this.car_sale = car_sale;
-    }
 
     public String getCar_status() {
         return car_status;
