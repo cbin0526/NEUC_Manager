@@ -24,4 +24,9 @@ public class PicServiceImpl implements PicService {
     public boolean insertPic(PicDto2 picDto) {
         return dao.addPic(picDto);
     }
+
+    @Override
+    public boolean updatePic(PicDto2 pic) {
+        return dao.updatePic(pic);
+    }
 }
