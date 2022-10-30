@@ -14,9 +14,9 @@ public class Car {
     private Double car_price;//车辆价格
     private String car_regist;//上牌时间
     private Double car_mile;//车辆表总里程
-    private Double car_at;//车辆变速箱
+    private String car_at;//车辆变速箱
     private Double car_dc;//车辆排量
-    private BigDecimal car_newprice;//车辆新车价格
+    private Double car_newprice;//车辆新车价格
     private Integer car_transfer;//车辆过户次数
     private String car_power;//车辆总功率
     private String car_adress;//车辆地址
@@ -25,11 +25,37 @@ public class Car {
     private String car_color;//车辆颜色
     private String car_producetime;//车辆产出时间
     private Integer car_keynum;//车辆钥匙数量
-
+    private Integer page;
+    private Integer size;
+    private String key="";
     private User car_sale;//卖家
     private User car_buy;//买家
     private String car_status;//状态
     private String car_time;//上架时间
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public Integer getCar_id() {
         return car_id;
@@ -87,12 +113,20 @@ public class Car {
         this.car_mile = car_mile;
     }
 
-    public Double getCar_at() {
+    public String getCar_at() {
         return car_at;
     }
 
-    public void setCar_at(Double car_at) {
+    public void setCar_at(String car_at) {
         this.car_at = car_at;
+    }
+
+    public Double getCar_newprice() {
+        return car_newprice;
+    }
+
+    public void setCar_newprice(Double car_newprice) {
+        this.car_newprice = car_newprice;
     }
 
     public Double getCar_dc() {
@@ -103,13 +137,7 @@ public class Car {
         this.car_dc = car_dc;
     }
 
-    public BigDecimal getCar_newprice() {
-        return car_newprice;
-    }
 
-    public void setCar_newprice(BigDecimal car_newprice) {
-        this.car_newprice = car_newprice;
-    }
 
     public Integer getCar_transfer() {
         return car_transfer;
@@ -174,7 +202,6 @@ public class Car {
     public void setCar_keynum(Integer car_keynum) {
         this.car_keynum = car_keynum;
     }
-
 
 
     public User getCar_sale() {
