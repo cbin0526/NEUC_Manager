@@ -23,7 +23,7 @@ public interface CarDao {
      * @param id
      * @return
      */
-    CarAndPicDto getCar(Integer id);
+    CarAndPicDto getCar(String id);
 
     /**
      * 分页查询车辆
