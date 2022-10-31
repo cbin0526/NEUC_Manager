@@ -7,6 +7,7 @@ public class PageDto {
 	private Integer page ;//当前页
 	private Integer size ;//当前页条数
 	private Integer maxPage ;//最大页
+	private Integer allCount;//总条数
 	private String key = "";//查询的关键字
 	private Object keyWords;//查询的多个关键字
 	private Object olist;//查询出来的数据
@@ -33,6 +34,14 @@ public class PageDto {
 
 	public void setMaxPage(Integer maxPage) {
 		this.maxPage = maxPage;
+	}
+
+	public Integer getAllCount() {
+		return allCount;
+	}
+
+	public void setAllCount(Integer allCount) {
+		this.allCount = allCount;
 	}
 
 	public String getKey() {

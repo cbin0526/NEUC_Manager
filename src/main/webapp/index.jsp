@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <title> 后台管理系统</title>
+    <title> 新能源二手车后台管理系统</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
 
@@ -29,7 +29,7 @@
                                 <span class="clear">
                                     <span class="block m-t-xs" style="font-size:20px;">
 
-                                        <strong class="font-bold">咸鱼二手车后台管理系统</strong>
+                                        <strong class="font-bold">咸鱼新能源二手车后台管理系统</strong>
                                     </span>
                                 </span>
                         </a>
@@ -56,13 +56,13 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="countmanager.jsp">用户账号禁用</a>
+                            <a class="J_menuItem" href="">用户账号禁用</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="passwordedit.jsp">用户密码修改</a>
+                            <a class="J_menuItem" href="">用户密码修改</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="searchcount.jsp">用户信息搜索</a>
+                            <a class="J_menuItem" href="">用户信息搜索</a>
                         </li>
                     </ul>
                 </li>
@@ -90,13 +90,13 @@
                 <li>
                     <a href="">
                         <i class="fa fa-pencil-square-o"></i>
-                        <span class="nav-label">场次管理</span>
+                        <span class="nav-label">预约管理</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="addSession.jsp">添加场次</a>
-                            <a class="J_menuItem" href="querySession?flag=1">编辑场次</a>
+                            <a class="J_menuItem" href="sellcarreserve.jsp">卖车预约</a>
+                            <a class="J_menuItem" href="lookcarreserve.jsp">看车预约</a>
 
                         </li>
                     </ul>
@@ -104,13 +104,13 @@
                 <li>
                     <a href="">
                         <i class="fa fa-cogs"></i>
-                        <span class="nav-label">价格管理</span>
+                        <span class="nav-label">推送管理</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="chanpinzhuanqu.html">添加价格</a>
-                            <a class="J_menuItem" href="chanpinzhuanqu1.html">编辑价格</a>
+                            <a class="J_menuItem" href="">推送车辆</a>
+                            <a class="J_menuItem" href=""></a>
                         </li>
                     </ul>
                 </li>
@@ -122,8 +122,8 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="shangchuanpinpai.html">订单编辑</a>
-                            <a class="J_menuItem" href="pinpailiebiao.html">订单查询</a>
+                            <a class="J_menuItem" href="">订单编辑</a>
+                            <a class="J_menuItem" href="">订单查询</a>
                         </li>
                     </ul>
                 </li>
@@ -139,8 +139,8 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="huiyuanjianglijilu.html">会员奖励记录</a></li>
-                        <li><a class="J_menuItem" href="huiyuanmeirijianglijilu.html">会员每日奖励记录</a></li>
+                        <li><a class="J_menuItem" href="">会员奖励记录</a></li>
+                        <li><a class="J_menuItem" href="">会员每日奖励记录</a></li>
                     </ul>
                 </li>
 
@@ -157,16 +157,16 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="daijinquan.html">代金券</a>
+                            <a class="J_menuItem" href="">代金券</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="youhuiquan.html">优惠券</a>
+                            <a class="J_menuItem" href="">优惠券</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="chongxiaoquan.html">重消券</a>
+                            <a class="J_menuItem" href="">重消券</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="gouwuquan.html">购物券</a>
+                            <a class="J_menuItem" href="">购物券</a>
                         </li>
 
                     </ul>
@@ -183,8 +183,8 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="wenzhangliebiao.html">文章列表</a></li>
-                        <li><a class="J_menuItem" href="wenzhangtianjia.html">添加文章</a></li>
+                        <li><a class="J_menuItem" href="">文章列表</a></li>
+                        <li><a class="J_menuItem" href="">添加文章</a></li>
                     </ul>
                 </li>
 
@@ -199,8 +199,8 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="tixianjilu.html">提现记录</a></li>
-                        <li><a class="J_menuItem" href="tixianshezhi.html">提现设置</a></li>
+                        <li><a class="J_menuItem" href="">提现记录</a></li>
+                        <li><a class="J_menuItem" href="">提现设置</a></li>
                     </ul>
                 </li>
 
@@ -216,7 +216,7 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="meirifanxianjilu.html">每日返现记录</a></li>
+                        <li><a class="J_menuItem" href="">每日返现记录</a></li>
 
                     </ul>
                 </li>
@@ -233,8 +233,8 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="zhifubaoshezhi.html">支付宝设置</a></li>
-                        <li><a class="J_menuItem" href="weixinshezhi.html">微信设置</a></li>
+                        <li><a class="J_menuItem" href="">支付宝设置</a></li>
+                        <li><a class="J_menuItem" href="">微信设置</a></li>
 
                     </ul>
                 </li>
@@ -252,9 +252,9 @@
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="tianjiajiamengdian.html">添加加盟店</a></li>
-                        <li><a class="J_menuItem" href="jiamengdianliebiao.html">加盟店列表</a></li>
-                        <li><a class="J_menuItem" href="jiamengdianyeji.html">加盟店业绩</a></li>
+                        <li><a class="J_menuItem" href="">添加加盟店</a></li>
+                        <li><a class="J_menuItem" href="">加盟店列表</a></li>
+                        <li><a class="J_menuItem" href="">加盟店业绩</a></li>
                     </ul>
                 </li>
 
@@ -286,10 +286,10 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="tianjiaguanliyuan.html">添加管理员</a>
+                            <a class="J_menuItem" href="">添加管理员</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="guanliyuanliebiao.html">管理员列表</a>
+                            <a class="J_menuItem" href="">管理员列表</a>
                         </li>
 
                     </ul>
@@ -302,10 +302,10 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="banner.html">banner 广告位列表</a>
+                            <a class="J_menuItem" href="">banner 广告位列表</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="sjbanner.html">手机banner 广告位列表</a>
+                            <a class="J_menuItem" href="">手机banner 广告位列表</a>
                         </li>
                     </ul>
                 </li>

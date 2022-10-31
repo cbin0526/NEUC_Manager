@@ -8,5 +8,51 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 mapper.xml以statement为单位管理sql语句
  -->
 
+    <select id="querySellByKeysOfPage" parameterType="sellOfKeysDto" resultType="sell">
+        select *from t_sell
+        <where>
+            <if test="sell_phone!=null">
+                and sell_phone like #{sell_phone}
+            </if>
+            <if test="sell_address!=null">
+                and sell_address like #{sell_address}
+            </if>
+            <if test="sell_carname!=null">
+                and sell_carname like #{sell_carname}
+            </if>
+            <if test="sell_cardept!=null">
+                and sell_cardept like #{sell_cardept}
+            </if>
+            <if test="sell_status!=null">
+                and sell_status like #{sell_status}
+            </if>
+        </where>
+        order by sell_status desc limit #{page},#{size}
+    </select>
+
+    <select id="querySellCount" resultType="countDto" parameterType="sellOfKeysDto">
+        select count(*) as allCount from t_sell
+        <where>
+            <if test="sell_phone!=null">
+                and sell_phone like #{sell_phone}
+            </if>
+            <if test="sell_address!=null">
+                and sell_address like #{sell_address}
+            </if>
+            <if test="sell_carname!=null">
+                and sell_carname like #{sell_carname}
+            </if>
+            <if test="sell_cardept!=null">
+                and sell_cardept like #{sell_cardept}
+            </if>
+            <if test="sell_status!=null">
+                and sell_status like #{sell_status}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateStatusById">
+        update t_sell set sell_status='已沟通' where  sell_id =#{sellid} and sell_status='未沟通'
+    </update>
 </mapper>
 
