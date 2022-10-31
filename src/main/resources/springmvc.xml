@@ -9,9 +9,22 @@
 <context:component-scan base-package="com.etc.my.controller"></context:component-scan>
 
 
-	<!-- 将静态资源排除到前端控制器之外 -->
-	<mvc:default-servlet-handler></mvc:default-servlet-handler>
-
+	<mvc:interceptors>
+		<!-- 拦截myjump.do方法 -->
+		<!-- /mycontroller/* 表示拦截mycontroller下面的一个子类路径
+        比如/mycontroller/aa.do
+        但是/mycontroller/aaa/aa.do 不会被拦截
+            /mycontroller/** 表示拦截mycontroller所有子类路径都会被拦截
+		-->
+		<mvc:interceptor>
+			<mvc:mapping path="/updateCarAndPic.do"/>
+			<bean class="com.etc.my.interceptor.FileInterceptor"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/addCar.do"/>
+			<bean class="com.etc.my.interceptor.FileInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	<!-- 将控制器方法返回的对象自动转换成json数据 -->
 	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
 	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
