@@ -69,11 +69,11 @@ public class CarController {
         //获取当前上传的文件名,外观1
         pic_appea1 = picDto.getPic_appea1().getOriginalFilename();
         //获取当前上传的文件名,外观2
-        pic_appea2 = picDto.getPic_appea1().getOriginalFilename();
+        pic_appea2 = picDto.getPic_appea2().getOriginalFilename();
         //获取当前上传的文件名,内饰1
         pic_interior1 = picDto.getPic_interior1().getOriginalFilename();
         //获取当前上传的文件名,内饰2
-        pic_interior2 = picDto.getPic_interior1().getOriginalFilename();
+        pic_interior2 = picDto.getPic_interior2().getOriginalFilename();
 
         //对该文件名进行重命名,主图
         pic_main = System.currentTimeMillis() + "-" + pic_main;
@@ -230,11 +230,11 @@ public class CarController {
         //获取当前上传的文件名,外观1
         pic_appea1 = picDto.getPic_appea1().getOriginalFilename();
         //获取当前上传的文件名,外观2
-        pic_appea2 = picDto.getPic_appea1().getOriginalFilename();
+        pic_appea2 = picDto.getPic_appea2().getOriginalFilename();
         //获取当前上传的文件名,内饰1
         pic_interior1 = picDto.getPic_interior1().getOriginalFilename();
         //获取当前上传的文件名,内饰2
-        pic_interior2 = picDto.getPic_interior1().getOriginalFilename();
+        pic_interior2 = picDto.getPic_interior2().getOriginalFilename();
 
         //对该文件名进行重命名,主图
         pic_main = System.currentTimeMillis() + "-" + pic_main;
