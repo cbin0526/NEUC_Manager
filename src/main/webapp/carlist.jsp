@@ -74,7 +74,6 @@ $(document).ready(function () {
 
                     // alert(msg);
                     str=str+'<tr class="gradeX">' +
-                        '<td>'+content[i].car_id+'</td>' +
                         ' <td>'+content[i].car_name+'</td>' +
                         '<td>'+content[i].car_brand+'</td>' +
                         '<td>'+content[i].car_dept+'</td>' +
@@ -85,7 +84,7 @@ $(document).ready(function () {
                         '<td>'+content[i].car_adress+'</td>' +
                         '<td>'+content[i].car_power+'</td>' +
                         '<td style="text-align: center;">' +
-                        '<a class="btn btn-white btn-bitbucket" title="编辑" href="javascript:editcar('+content[i].car_id+')">' +
+                        '<a class="btn btn-white btn-bitbucket" title="编辑" href="javascript:editcar(\''+content[i].car_id+'\')">' +
                         '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' +
                         '</a>' +
                         '<input type="hidden" value="123"/>' +
@@ -222,7 +221,6 @@ $(document).ready(function () {
                     <table class="table table-striped table-bordered table-hover dataTables-example">
                         <thead>
                         <tr>
-                            <th>车辆id</th>
                             <th>车辆名称</th>
                             <th>车辆品牌</th>
                             <th>车辆系别</th>

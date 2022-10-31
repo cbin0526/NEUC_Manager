@@ -63,7 +63,7 @@
         // var preview3 = document.getElementById("appeal2");
         // var preview4 = document.getElementById("interior2");
         // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector('input[type=file]').files[1];
+        var file2  = document.querySelector('input[type=file]').files[1];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -74,8 +74,8 @@
 
 
         }
-        if (file) {
-            reader.readAsDataURL(file);
+        if (file2) {
+            reader.readAsDataURL(file2);
         } else {
             // preview.src = "";
             preview2.src = "";
@@ -94,7 +94,7 @@
         var preview3 = document.getElementById("appeal2");
         // var preview4 = document.getElementById("interior2");
         // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector('input[type=file]').files[2];
+        var file3  = document.querySelector('input[type=file]').files[2];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -105,8 +105,8 @@
 
 
         }
-        if (file) {
-            reader.readAsDataURL(file);
+        if (file3) {
+            reader.readAsDataURL(file3);
         } else {
             // preview.src = "";
             // preview2.src = "";
@@ -125,7 +125,7 @@
         // var preview3 = document.getElementById("appeal2");
         var preview4 = document.getElementById("interior1");
         // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector("#interior1").files[3];
+        var file4  = document.querySelector("#interior1").files[3];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -136,8 +136,8 @@
 
 
         }
-        if (file) {
-            reader.readAsDataURL(file);
+        if (file4) {
+            reader.readAsDataURL(file4);
         } else {
             // preview.src = "";
             // preview2.src = "";
@@ -156,7 +156,7 @@
         // var preview3 = document.getElementById("appeal2");
         // var preview4 = document.getElementById("interior2");
         var preview5 = document.getElementById("interior2");
-        var file  = document.querySelector('input[type=file]').files[4];
+        var file5  = document.querySelector('input[type=file]').files[4];
         var reader = new FileReader();
         reader.onloadend = function () {
             // preview.src = reader.result;
@@ -167,8 +167,8 @@
 
 
         }
-        if (file) {
-            reader.readAsDataURL(file);
+        if (file5) {
+            reader.readAsDataURL(file5);
         } else {
             // preview.src = "";
             // preview2.src = "";
