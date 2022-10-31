@@ -50,7 +50,7 @@ public interface CarService {
      * @return
      * @author ljw
      */
-    CarAndPicDto queryCar(Integer id);
+    CarAndPicDto queryCar(String id);
 
     /**
      * 修改车辆信息
