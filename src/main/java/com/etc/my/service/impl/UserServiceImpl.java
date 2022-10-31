@@ -38,4 +38,13 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+
+    @Override
+    public User checkLogin(String user_name, String user_pwd) {
+        if(user_name==null&&user_pwd==null){
+            return null;
+        }
+        return dao.check(user_name,user_pwd);
+    }
 }
