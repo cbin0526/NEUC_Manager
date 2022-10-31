@@ -37,7 +37,7 @@
  */
 $(document).ready(function () {
 
-    allCar(1, 1);
+    allCar(1, 3);
 })
     /**
      * 获取所有车辆
@@ -99,41 +99,41 @@ $(document).ready(function () {
 
                 //上一页/下一页
                 var str1=
-                    '<a href="javascript:allSession(1,' +size
+                    '<a href="javascript:allCar(1,' +size
                     + ')">首页</a>&nbsp;&nbsp;&nbsp;'+
-                    '<a href="javascript:allSession('+(page-1)+',' + size
+                    '<a href="javascript:allCar('+(page-1)+',' + size
                     + ')">上一页</a>&nbsp;&nbsp;&nbsp;'+
                     // + '<span id="myspan"></span>'+
-                    '<a href="javascript:allSession('+(page+1)+',' + size
+                    '<a href="javascript:allCar('+(page+1)+',' + size
                     + ')">下一页</a>&nbsp;&nbsp;&nbsp;'+
-                    '<a href="javascript:allSession('+maxPage+',' + size
+                    '<a href="javascript:allCar('+maxPage+',' + size
                     + ')">尾页</a>';
 
                 $("#myindex").html(str1);
                 // //选择页数
-                // let str3 = "";
-                // let str4 = "";
-                // if (page != "&&maxPage!=") {
-                //     page = parseInt(page);
-                //     maxPage = parseInt(maxPage);
-                //     for (var i = 1; i <= maxPage; i++) {
-                //         if (i == page) {
-                //             str3 = str3 + "第" + i + "页</a>&nbsp;&nbsp;";
-                //             str4 = str4
-                //                 + "<option selected='selected' value='"+i+"'>第"
-                //                 + i + "页</option>";
-                //         } else {
-                //             str3 = str3 + "<a href='javascript:allSession("
-                //                 + i + ",4)'>第" + i
-                //                 + "页</a>&nbsp;&nbsp;"
-                //             str4 = str4 + "<option  value='"+i+"'>第"
-                //                 + i + "页</option>";
-                //         }
-                //     }
-                //     $("#myspan").html(str3);
-                //     $("#myselected").html(str4);
-                // }
-                //
+                let str3 = "";
+                let str4 = "";
+                if (page != "&&maxPage!=") {
+                    page = parseInt(page);
+                    maxPage = parseInt(maxPage);
+                    for (var i = 1; i <= maxPage; i++) {
+                        if (i == page) {
+                            str3 = str3 + "第" + i + "页</a>&nbsp;&nbsp;";
+                            str4 = str4
+                                + "<option selected='selected' value='"+i+"'>第"
+                                + i + "页</option>";
+                        } else {
+                            str3 = str3 + "<a href='javascript:allCar("
+                                + i + ",4)'>第" + i
+                                + "页</a>&nbsp;&nbsp;"
+                            str4 = str4 + "<option  value='"+i+"'>第"
+                                + i + "页</option>";
+                        }
+                    }
+                    $("#myspan").html(str3);
+                    $("#myselected").html(str4);
+                }
+
 
             }
         });
@@ -240,6 +240,10 @@ $(document).ready(function () {
                     </table>
                     <div align="center" id="myindex">
 
+                </div>
+                    <div align="center">
+                    <select id="myselected" onchange="allCar(this.value,3)"></select>
+                </div>
                 </div>
                 </div>
             </div>

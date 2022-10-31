@@ -238,7 +238,7 @@
                                         Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +
                                             "</h3>"
                                     }
-                                    Gid('s_county').setAttribute('onchange', 'showArea()');
+                                    // Gid('s_county').setAttribute('onchange', 'showArea()');
                                 </script>
                                 <span class="help-block m-b-none"></span>
                             </div>
