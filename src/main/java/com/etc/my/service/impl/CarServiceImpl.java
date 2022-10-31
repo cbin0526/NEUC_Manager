@@ -71,8 +71,8 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public CarAndPicDto queryCar(Integer id) {
-        if(id<0&&id==null){
+    public CarAndPicDto queryCar(String id) {
+        if(id.equals("")&&id==null){
             return null;
         }
         return dao.getCar(id);
