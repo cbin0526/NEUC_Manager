@@ -321,7 +321,14 @@
             </ul>
         </div>
     </nav>
-
+<script>
+//注销用户
+function loginoutUser() {
+    if(confirm("是否要注销此用户")){
+        location.href="loginout.do";
+    }
+}
+</script>
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -331,7 +338,7 @@
                 <ul class="nav navbar-top-links navbar-right">
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle count-info" data-toggle="" href="loginout.action" title="退出">
+                        <a class="dropdown-toggle count-info" data-toggle="" href="javascript:loginoutUser()" title="退出">
                             admin  <i class="fa fa-power-off"></i> <span class="label label-warning"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-messages" style="width: 100px;padding: 0px;">
