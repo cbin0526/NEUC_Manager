@@ -17,5 +17,13 @@ public interface UserService {
      */
     User getUser(String user_phone);
 
+    /**
+     * 根据姓名和密码查询用户
+     * @param user_name
+     * @param user_pwd
+     * @return
+     */
+    User checkLogin(String user_name,String user_pwd);
+
 
 }
