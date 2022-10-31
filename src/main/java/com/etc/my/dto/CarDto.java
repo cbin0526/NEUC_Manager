@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class CarDto {
 
-    private Integer car_id;//车辆id
+    private String car_id;//车辆id
     private String car_name;//车辆名称
     private String car_brand;//车辆品牌
     private String car_dept;//车辆系别
@@ -110,11 +110,12 @@ public class CarDto {
         this.car_buy = car_buy;
     }
 
-    public Integer getCar_id() {
+
+    public String getCar_id() {
         return car_id;
     }
 
-    public void setCar_id(Integer car_id) {
+    public void setCar_id(String car_id) {
         this.car_id = car_id;
     }
 

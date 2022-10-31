@@ -8,7 +8,7 @@ public class PicDto2 {
     private String pic_appea2;//车辆外观2
     private String pic_interior1;//车辆内饰1
     private String  pic_interior2;//车辆内饰2
-    private Integer pic_car;//车辆id
+    private String pic_car;//车辆id
 
     public Integer getPic_id() {
         return pic_id;
@@ -58,11 +58,11 @@ public class PicDto2 {
         this.pic_interior2 = pic_interior2;
     }
 
-    public Integer getPic_car() {
+    public String getPic_car() {
         return pic_car;
     }
 
-    public void setPic_car(Integer pic_car) {
+    public void setPic_car(String pic_car) {
         this.pic_car = pic_car;
     }
 }

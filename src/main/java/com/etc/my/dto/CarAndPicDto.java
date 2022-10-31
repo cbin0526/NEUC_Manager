@@ -8,7 +8,7 @@ import com.etc.my.entity.User;
  */
 public class CarAndPicDto {
 
-    private Integer car_id;//车辆id
+    private String car_id;//车辆id
     private String car_name;//车辆名称
     private String car_brand;//车辆品牌
     private String car_dept;//车辆系别
@@ -39,7 +39,7 @@ public class CarAndPicDto {
     private String pic_appea2;//车辆外观2
     private String pic_interior1;//车辆内饰1
     private String  pic_interior2;//车辆内饰2
-    private Integer pic_car;//车辆id
+    private String pic_car;//车辆id
     private String user_phone;//联系电话
 
     public Integer getCar_sale() {
@@ -114,11 +114,20 @@ public class CarAndPicDto {
         this.pic_interior2 = pic_interior2;
     }
 
-    public Integer getPic_car() {
+
+    public String getCar_id() {
+        return car_id;
+    }
+
+    public void setCar_id(String car_id) {
+        this.car_id = car_id;
+    }
+
+    public String getPic_car() {
         return pic_car;
     }
 
-    public void setPic_car(Integer pic_car) {
+    public void setPic_car(String pic_car) {
         this.pic_car = pic_car;
     }
 
@@ -146,13 +155,7 @@ public class CarAndPicDto {
         this.key = key;
     }
 
-    public Integer getCar_id() {
-        return car_id;
-    }
 
-    public void setCar_id(Integer car_id) {
-        this.car_id = car_id;
-    }
 
     public String getCar_name() {
         return car_name;
