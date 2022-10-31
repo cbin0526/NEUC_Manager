@@ -20,6 +20,7 @@ import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class CarController {
@@ -103,6 +104,7 @@ public class CarController {
         }
         try {
             //注入值
+            UUID uuid=UUID.randomUUID();
             car.setCar_name(car.getCar_name());
             car.setCar_brand(car.getCar_brand());
             car.setCar_dept(car.getCar_dept());
@@ -122,10 +124,11 @@ public class CarController {
             car.setCar_keynum(car.getCar_keynum());
             car.setCar_status(car.getCar_status());
             car.setCar_time(car.getCar_time());
+            car.setCar_id(uuid.toString());
             User user = userService.getUser(car.getPhone());
             car.setCar_sale(user.getUser_id());
             PicDto2 picDto2 = new PicDto2();
-            picDto2.setPic_car(car.getCar_id());
+            picDto2.setPic_car(uuid.toString());
             picDto2.setPic_main(pic_main);
             picDto2.setPic_appea1(pic_appea1);
             picDto2.setPic_appea2(pic_appea2);
@@ -198,8 +201,7 @@ public class CarController {
     @RequestMapping("/getCarById")
     public void getCarById(HttpServletRequest request,HttpServletResponse response) throws Exception{
         String cid=request.getParameter("cid");
-        Integer id=Integer.valueOf(cid);
-        CarAndPicDto carDto=carService.queryCar(id);
+        CarAndPicDto carDto=carService.queryCar(cid);
         request.setAttribute("carDto",carDto);
         request.getSession().setAttribute("carDto",carDto);
         request.getRequestDispatcher("editCar.jsp").forward(request,response);
