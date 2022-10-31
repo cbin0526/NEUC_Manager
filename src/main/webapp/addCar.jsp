@@ -26,159 +26,50 @@
 </head>
 
 <body class="gray-bg">
-<script>
-    function previewFile() {
-        var preview = document.getElementById("carmain");
-        // var preview2 = document.getElementById("appeal1");
-        // var preview3 = document.getElementById("appeal2");
-        // var preview4 = document.getElementById("interior2");
-        // var preview5 = document.getElementById("interior1");
-        var file  = document.querySelector('input[type=file]').files[0];
-        var reader = new FileReader();
+<%--<script>--%>//单张图片
+    <%--function previewFile() {--%>
+        <%--var preview =document.querySelector('img[id=carmain]');--%>
+        <%--// var preview2 = document.getElementById("appeal1");--%>
+        <%--// var preview3 = document.getElementById("appeal2");--%>
+        <%--// var preview4 = document.getElementById("interior2");--%>
+        <%--// var preview5 = document.getElementById("interior1");--%>
+        <%--var file  = document.querySelector('input[type=file]').files[0];--%>
+        <%--var reader = new FileReader();--%>
+        <%--reader.onloadend = function () {--%>
+            <%--preview.src = reader.result;--%>
+            <%--// preview2.src = reader.result;--%>
+            <%--// preview3.src = reader.result;--%>
+            <%--// preview4.src = reader.result;--%>
+            <%--// preview5.src = reader.result;--%>
+
+        <%--}--%>
+        <%--if (file) {--%>
+            <%--reader.readAsDataURL(file);--%>
+        <%--} else {--%>
+            <%--preview.src = "";--%>
+            <%--// preview2.src = "";--%>
+            <%--// preview3.src = "";--%>
+            <%--// preview4.src = "";--%>
+            <%--// preview5.src = "";--%>
+
+        <%--}--%>
+    <%--}--%>
+
+<%--</script>--%>
+<script>//多张图片
+    function showImg(fileid,target){//给2个参数，其他位置的参数名一致，值就进去了
+        var preview = document.querySelector('#'+target);//获取img元素,显示图片位置，根据el表达式('#'+target)
+        var file = document.querySelector('#'+fileid).files[0];//根据id拿到文件选择框里面的文件，
+        var reader = new FileReader();//创建FileReader接口（把文件放到图片预览框里面）
         reader.onloadend = function () {
             preview.src = reader.result;
-            // preview2.src = reader.result;
-            // preview3.src = reader.result;
-            // preview4.src = reader.result;
-            // preview5.src = reader.result;
-
         }
         if (file) {
             reader.readAsDataURL(file);
         } else {
             preview.src = "";
-            // preview2.src = "";
-            // preview3.src = "";
-            // preview4.src = "";
-            // preview5.src = "";
-
         }
     }
-
-</script>
-<script>
-    function previewFile2() {
-        // var preview = document.getElementById("carmain");
-        var preview2 = document.getElementById("appeal1");
-        // var preview3 = document.getElementById("appeal2");
-        // var preview4 = document.getElementById("interior2");
-        // var preview5 = document.getElementById("interior1");
-        var file2  = document.querySelector('input[type=file]').files[1];
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            // preview.src = reader.result;
-            preview2.src = reader.result;
-            // preview3.src = reader.result;
-            // preview4.src = reader.result;
-            // preview5.src = reader.result;
-
-
-        }
-        if (file2) {
-            reader.readAsDataURL(file2);
-        } else {
-            // preview.src = "";
-            preview2.src = "";
-            // preview3.src = "";
-            // preview4.src = "";
-            // preview5.src = "";
-
-        }
-    }
-
-</script>
-<script>
-    function previewFile3() {
-        // var preview = document.getElementById("carmain");
-        // var preview2 = document.getElementById("appeal1");
-        var preview3 = document.getElementById("appeal2");
-        // var preview4 = document.getElementById("interior2");
-        // var preview5 = document.getElementById("interior1");
-        var file3  = document.querySelector('input[type=file]').files[2];
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            // preview.src = reader.result;
-            // preview2.src = reader.result;
-            preview3.src = reader.result;
-            // preview4.src = reader.result;
-            // preview5.src = reader.result;
-
-
-        }
-        if (file3) {
-            reader.readAsDataURL(file3);
-        } else {
-            // preview.src = "";
-            // preview2.src = "";
-            preview3.src = "";
-            // preview4.src = "";
-            // preview5.src = "";
-
-        }
-    }
-
-</script>
-<script>
-    function previewFile4() {
-        // var preview = document.getElementById("carmain");
-        // var preview2 = document.getElementById("appeal1");
-        // var preview3 = document.getElementById("appeal2");
-        var preview4 = document.getElementById("interior1");
-        // var preview5 = document.getElementById("interior1");
-        var file4  = document.querySelector("#interior1").files[3];
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            // preview.src = reader.result;
-            // preview2.src = reader.result;
-            // preview3.src = reader.result;
-            preview4.src = reader.result;
-            // preview5.src = reader.result;
-
-
-        }
-        if (file4) {
-            reader.readAsDataURL(file4);
-        } else {
-            // preview.src = "";
-            // preview2.src = "";
-            // preview3.src = "";
-            preview4.src = "";
-            // preview5.src = "";
-
-        }
-    }
-
-</script>
-<script>
-    function previewFile5() {
-        // var preview = document.getElementById("carmain");
-        // var preview2 = document.getElementById("appeal1");
-        // var preview3 = document.getElementById("appeal2");
-        // var preview4 = document.getElementById("interior2");
-        var preview5 = document.getElementById("interior2");
-        var file5  = document.querySelector('input[type=file]').files[4];
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            // preview.src = reader.result;
-            // preview2.src = reader.result;
-            // preview3.src = reader.result;
-            // preview4.src = reader.result;
-            preview5.src = reader.result;
-
-
-        }
-        if (file5) {
-            reader.readAsDataURL(file5);
-        } else {
-            // preview.src = "";
-            // preview2.src = "";
-            // preview3.src = "";
-            // preview4.src = "";
-            preview5.src = "";
-
-        }
-    }
-
 </script>
 
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -407,7 +298,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆主图：</label>
                             <div class="col-sm-8">
-                                <input id="pic_main" name="pic_main" class="" type="file" onchange="previewFile()">
+                                <input id="pic_main" name="pic_main" class="" type="file" onchange="showImg('pic_main','carmain')">
                                 <span class="help-block m-b-none">
                                     <img src="images/login-background.jpg" width="200"  height="200" id="carmain">
                                 </span>
@@ -416,7 +307,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆外观1：</label>
                             <div class="col-sm-8">
-                                <input id="pic_appea1" name="pic_appea1" class="" type="file" onchange="previewFile2()">
+                                <input id="pic_appea1" name="pic_appea1" class="" type="file" onchange="showImg('pic_appea1','appeal1')">
                                 <span class="help-block m-b-none">
                                     <img src="images/login-background.jpg" width="200" height="200" id="appeal1">
                                 </span>
@@ -425,7 +316,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆外观2：</label>
                             <div class="col-sm-8">
-                                <input id="pic_appea2" name="pic_appea2" class="" type="file" onchange="previewFile3()">
+                                <input id="pic_appea2" name="pic_appea2" class="" type="file" onchange="showImg('pic_appea2','appeal2')">
                                 <span class="help-block m-b-none">
                                     <img src="images/login-background.jpg" width="200" height="200"id="appeal2">
                                 </span>
@@ -434,7 +325,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆内饰1：</label>
                             <div class="col-sm-8">
-                                <input id="pic_interior1" name="pic_interior1" class="" type="file" onchange="previewFile4()">
+                                <input id="pic_interior1" name="pic_interior1" class="" type="file" onchange="showImg('pic_interior1','interior1')">
                                 <span class="help-block m-b-none">
                                     <img src="images/login-background.jpg" width="200" height="200" id="interior1">
                                 </span>
@@ -443,7 +334,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"><span style="color:red;">*</span>车辆内饰2：</label>
                             <div class="col-sm-8">
-                                <input id="pic_interior2" name="pic_interior2" class="" type="file" onchange="previewFile5()">
+                                <input id="pic_interior2" name="pic_interior2" class="" type="file" onchange="showImg('pic_interior2','interior2')">
                                 <span class="help-block m-b-none">
                                     <img src="images/login-background.jpg" width="200" height="200 " id="interior2">
                                 </span>
