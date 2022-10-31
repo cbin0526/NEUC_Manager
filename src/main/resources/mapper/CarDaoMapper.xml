@@ -11,9 +11,9 @@
 <!--添加车辆信息-->
     <insert id="addCar" parameterType="carDto">
      insert into t_car (car_name,car_brand,car_dept,car_price,car_regist,car_mile,car_at,car_dc,car_newprice,
-     car_transfer,car_power,car_adress,car_endurance,car_capacity,car_color,car_producetime,car_keynum,car_sale,car_status,car_time)
+     car_transfer,car_power,car_adress,car_endurance,car_capacity,car_color,car_producetime,car_keynum,car_sale,car_status,car_time,car_id)
        values (#{car_name},#{car_brand},#{car_dept},#{car_price},#{car_regist},#{car_mile},#{car_at},#{car_dc},#{car_newprice},#{car_transfer},
-        #{car_power},#{car_adress},#{car_endurance},#{car_capacity},#{car_color},#{car_producetime},#{car_keynum},#{car_sale},#{car_status},#{car_time})
+        #{car_power},#{car_adress},#{car_endurance},#{car_capacity},#{car_color},#{car_producetime},#{car_keynum},#{car_sale},#{car_status},#{car_time},#{car_id})
     </insert>
     <!--动态查询车辆信息-->
     <select id="queryCar" resultType="car" parameterType="carDto">
