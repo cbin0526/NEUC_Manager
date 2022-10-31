@@ -4,6 +4,7 @@ package com.etc.my.controller;
 import com.etc.my.dto.MyMessage;
 import com.etc.my.entity.User;
 import com.etc.my.service.UserService;
+import com.etc.my.util.IsFish;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -42,20 +43,29 @@ public class UserController {
     //管理员登录
     @RequestMapping("/checkLogin")
     public void checkLogin(String user_name,String user_pwd,HttpServletResponse response, HttpServletRequest request)throws Exception{
-        User user=us.checkLogin(user_name,user_pwd);
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out=response.getWriter();
+        IsFish isFish=new IsFish();
+        if(isFish.isFish(request)){
+            User user=us.checkLogin(user_name,user_pwd);
 
-        if(user!=null&&"admin".equals(user_name)&&"123".equals(user_pwd)){
-            request.getSession().setAttribute("loginuser",user);
-            out.print("<script>alert('登录成功');location.href='index.jsp'</script>");
 
+            if(user!=null&&"admin".equals(user_name)&&"123".equals(user_pwd)){
+                request.getSession().setAttribute("loginuser",user);
+                out.print("<script>alert('登录成功');location.href='index.jsp'</script>");
+
+            }else{
+                out.print("<script>alert('登录失败');history.go(-1);</script>");
+
+            }
+            out.flush();
+            out.close();
         }else{
-            out.print("<script>alert('登录失败');history.go(-1);</script>");
-
+            out.print("<script>alert('滚吧，盗链狗！！！！');history.go(-1);</script>");
         }
         out.flush();
         out.close();
+
 
     }
     //注销

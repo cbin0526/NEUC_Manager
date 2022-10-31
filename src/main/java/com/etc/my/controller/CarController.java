@@ -104,7 +104,7 @@ public class CarController {
         }
         try {
             //注入值
-            UUID uuid=UUID.randomUUID();
+            UUID uuid = UUID.randomUUID();
             car.setCar_name(car.getCar_name());
             car.setCar_brand(car.getCar_brand());
             car.setCar_dept(car.getCar_dept());
@@ -158,8 +158,8 @@ public class CarController {
 
         MyMessage myMessage = new MyMessage();
         //page，size默认值
-        Integer page = 1;
-        Integer size = 5;
+        Integer page = car.getPage();
+        Integer size = car.getSize();
         //注入值
         car.setCar_name("%" + car.getCar_name() + "%");
         car.setCar_brand("%" + car.getCar_brand() + "%");
@@ -168,46 +168,43 @@ public class CarController {
         car.setCar_color("%" + car.getCar_color() + "%");
         car.setCar_producetime("%" + car.getCar_producetime() + "%");
         car.setCar_status("%" + car.getCar_status() + "%");
-        car.setCar_regist("%"+car.getCar_regist()+"%");
-        car.setCar_power("%"+car.getCar_power()+"%");
-        car.setCar_endurance("%"+car.getCar_endurance()+"%");
+        car.setCar_regist("%" + car.getCar_regist() + "%");
+        car.setCar_power("%" + car.getCar_power() + "%");
+        car.setCar_endurance("%" + car.getCar_endurance() + "%");
         //page，size默认值
 
         //size.page.maxPage容错
         size = size <= 0 ? 5 : size;
         page = page <= 0 ? 1 : page;
         Long count = carService.getCarCount();
-        if (count < 0) {
-            myMessage.setFlag(0);
-        } else {
-
-            Integer maxPage = (int) (count % size == 0 ? (count / size) : (count / size + 1));
-            page = page > maxPage ? maxPage : page;
-            car.setSize(size);
-            car.setPage((page - 1) * size);
-            car.setMaxPage(maxPage);
-            List<Car> list = carService.queryCar(car);
-            myMessage.setData(car);
-            myMessage.setOlist(list);
-            myMessage.setPage((page-1)*size);
-            myMessage.setSize(size);
-            myMessage.setMaxPage(maxPage);
-        }
+        Integer maxPage = (int) (count % size == 0 ? (count / size) : (count / size + 1));
+        page = page > maxPage ? maxPage : page;
+        car.setSize(size);
+        car.setPage((page - 1) * size);
+        car.setMaxPage(maxPage);
+        List<Car> list = carService.queryCar(car);
+        myMessage.setData(car);
+        myMessage.setOlist(list);
+        myMessage.setPage(page);
+        myMessage.setSize(size);
+        myMessage.setMaxPage(maxPage);
 
         return myMessage;
 
     }
+
     //根据id查询车辆信息
     @RequestMapping("/getCarById")
-    public void getCarById(HttpServletRequest request,HttpServletResponse response) throws Exception{
-        String cid=request.getParameter("cid");
-        CarAndPicDto carDto=carService.queryCar(cid);
-        request.setAttribute("carDto",carDto);
-        request.getSession().setAttribute("carDto",carDto);
-        request.getRequestDispatcher("editCar.jsp").forward(request,response);
+    public void getCarById(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String cid = request.getParameter("cid");
+        CarAndPicDto carDto = carService.queryCar(cid);
+        request.setAttribute("carDto", carDto);
+        request.getSession().setAttribute("carDto", carDto);
+        request.getRequestDispatcher("editCar.jsp").forward(request, response);
 
     }
-   //修改车辆信息
+
+    //修改车辆信息
     @RequestMapping("/updateCarAndPic")
     public void updateCarAndPic(CarDto car, PicDto picDto, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -265,8 +262,8 @@ public class CarController {
         }
         try {
 
-        CarAndPicDto carAndPicDto= (CarAndPicDto) request.getSession().getAttribute("carDto");
-                ;
+            CarAndPicDto carAndPicDto = (CarAndPicDto) request.getSession().getAttribute("carDto");
+            ;
             //注入值
             car.setCar_name(car.getCar_name());
             car.setCar_brand(car.getCar_brand());
@@ -295,7 +292,7 @@ public class CarController {
             picDto2.setPic_appea2(pic_appea2);
             picDto2.setPic_interior1(pic_interior1);
             picDto2.setPic_interior2(pic_interior2);
-            if (carService.updateCarAndPic(car,picDto2)) {
+            if (carService.updateCarAndPic(car, picDto2)) {
 
                 out.print("<script>alert('修改成功');location.href='carlist.jsp';</script>");
             } else {
