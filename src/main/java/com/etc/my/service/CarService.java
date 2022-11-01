@@ -6,8 +6,10 @@ import com.etc.my.dto.CarDto;
 import com.etc.my.dto.PicDto;
 import com.etc.my.dto.PicDto2;
 import com.etc.my.entity.Car;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CarService {
 
@@ -70,4 +72,11 @@ public interface CarService {
      * author ljw
      */
     boolean updateCarAndPic(CarDto carDto, PicDto2 dto)throws Exception;
+
+    /**
+     * 车辆信息导成excle的方法
+     * @param map
+     * @return
+     */
+    HSSFWorkbook exportExcel(Map<String,Object> map);
 }
