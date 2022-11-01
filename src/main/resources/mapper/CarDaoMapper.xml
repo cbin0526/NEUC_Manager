@@ -78,7 +78,10 @@
         select c.*,u.user_phone,p.* FROM t_car as c inner JOIN t_user as u on u.user_id=c.car_sale inner JOIN t_pic as p on c.car_id=p.pic_car where c.car_id=#{id}
     </select>
 
-
+<!---->
+    <select id="getAllCar" resultType="carDto">
+        select * from t_car
+    </select>
 
 </mapper>
 
