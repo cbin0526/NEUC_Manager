@@ -7,6 +7,7 @@ import com.etc.my.entity.User;
 import com.etc.my.service.CarService;
 import com.etc.my.service.UserService;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +17,12 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -306,5 +309,25 @@ public class CarController {
         }
 
 
+    }
+//导出excel文件
+    @RequestMapping("/exportExcel")
+    @ResponseBody
+    public String exportExcel(HttpServletResponse response, Map<String, Object> params) {
+
+        HSSFWorkbook workbook = carService.exportExcel(params);
+        try {
+            if (response != null) {
+                response.setContentType("application/vnd.ms-excel;charset=utf-8");
+                response.setHeader("Content-Disposition",
+                        "attachment;filename=\"" + new String(("车辆数据信息" + ".xls").getBytes("gb2312"), "ISO8859-1"));
+                OutputStream out = response.getOutputStream();
+                workbook.write(out);
+                out.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
