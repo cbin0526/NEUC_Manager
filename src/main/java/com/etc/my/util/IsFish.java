@@ -14,7 +14,7 @@ public class IsFish {
         //获取当前项目名
         String path = request.getContextPath();
         //获取动态路径 http://ip:port/项目名/
-        String bathPath = request.getScheme() + "://" + request.getServerName();
+        String bathPath = request.getScheme() + "://" + request.getServerName()+":"+request.getServerPort()+path+"/";
         System.out.println("当前项目的网络地址:"+bathPath);
         //获取上个页面的地址
         String url = request.getHeader("referer");
