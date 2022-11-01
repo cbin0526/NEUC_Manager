@@ -1,25 +1,17 @@
-package com.etc.my.entity;
+package com.etc.my.dto;
 
-/**
- * 我要卖的车
- */
-public class Sell {
+import com.etc.my.entity.User;
 
-    private  Integer sell_id;//卖车信息表id
+public class SellOfKeysDto {
+
     private String sell_phone;//卖车联系电话
     private String sell_address;//卖车地址
     private String sell_carname;//卖车的品牌名称
     private String sell_cardept;//卖车的系别
-    private User sell_user;//预约卖车的用户tring
+    private User sell_user;//预约卖车的用户
     private String sell_status;//沟通状态
-
-    public Integer getSell_id() {
-        return sell_id;
-    }
-
-    public void setSell_id(Integer sell_id) {
-        this.sell_id = sell_id;
-    }
+    private Integer page;
+    private Integer size;
 
     public String getSell_phone() {
         return sell_phone;
@@ -69,4 +61,19 @@ public class Sell {
         this.sell_status = sell_status;
     }
 
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
 }
