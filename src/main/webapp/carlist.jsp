@@ -138,10 +138,19 @@ $(document).ready(function () {
     }
 </script>
 <script>
+    //修改车辆信息
     function editcar(id) {
         location.href="getCarById.do?cid="+id;
     }
 </script>
+<script>
+    //导出excel文件
+    function exportCarExcel(){
+        location.href="exportExcel.do";
+    }
+</script>
+
+
 <body class="gray-bg">
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
@@ -211,6 +220,9 @@ $(document).ready(function () {
                         </div>
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
                             <input class="btn btn-white" type="button" onclick="javascript:allCar(0,1)" value="查询"></input>
+                        </div>
+                        <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
+                            <input class="btn btn-white" type="button" onclick="javascript:exportCarExcel()" value="导出文件"></input>
                         </div>
                     </form>
                 </div>
