@@ -7,6 +7,7 @@ import com.etc.my.dto.PageDto;
 import com.etc.my.entity.Car;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface CarDao {
@@ -47,6 +48,14 @@ public interface CarDao {
      * @author ljw
      */
     boolean updateCar(CarDto dto);
+
+
+    /**
+     * 获取车辆信息
+     * @param map
+     * @return
+     */
+    List<CarDto> getAllCar(Map<String, Object> map);
 
 
 }
