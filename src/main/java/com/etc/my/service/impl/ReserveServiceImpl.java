@@ -3,6 +3,8 @@ package com.etc.my.service.impl;
 
 import com.etc.my.dao.ReserveDao;
 import com.etc.my.dto.ReserveDto;
+import com.etc.my.dto.UpdateReserveDto;
+import com.etc.my.entity.Reserve;
 import com.etc.my.service.ReserveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +39,7 @@ public class ReserveServiceImpl implements ReserveService {
     }
 
     @Override
-    public List<ReserveDto> queryReserve(ReserveDto reserveDto) {
+    public List<Reserve> queryReserve(ReserveDto reserveDto) {
         return dao.queryReserve(reserveDto);
     }
 
@@ -48,12 +50,12 @@ public class ReserveServiceImpl implements ReserveService {
     }
 
     @Override
-    public boolean updateReserve(ReserveDto reserveDto) {
-        return dao.updateReserve(reserveDto);
+    public boolean updateReserve(UpdateReserveDto updateReserveDto) {
+        return dao.updateReserve(updateReserveDto);
     }
 
     @Override
-    public List<ReserveDto> getAllReserve(Map<String, Object> map) {
-        return dao.getAllReserve(map);
+    public List<ReserveDto> getAllReserve(ReserveDto reserveDto) {
+        return dao.getAllReserve(reserveDto);
     }
 }

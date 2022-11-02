@@ -80,7 +80,6 @@
                                         <option value="已看车" >已看车</option>
                                         <option value="未看车"selected="selected">未看车</option>
                                     </c:if>
-
                                 </select>
                                 <span class="help-block m-b-none"></span>
                             </div>

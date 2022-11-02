@@ -1,9 +1,6 @@
 package com.etc.my.controller;
 
-import com.etc.my.dto.CarDto;
-import com.etc.my.dto.MyMessage;
-import com.etc.my.dto.PicDto;
-import com.etc.my.dto.ReserveDto;
+import com.etc.my.dto.*;
 import com.etc.my.service.ReserveService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -59,7 +55,7 @@ public class ReserveController {
         reserveDto.setSize(size);
         reserveDto.setPage((page - 1) * size);
         reserveDto.setMaxPage(maxPage);
-        List<ReserveDto> list = rs.queryReserve(reserveDto);
+        List<ReserveDto> list = rs.getAllReserve(reserveDto);
         myMessage.setData(reserveDto);
         myMessage.setOlist(list);
         myMessage.setPage(page);
@@ -82,18 +78,16 @@ public class ReserveController {
 
     //修改预约信息
     @RequestMapping(value = "/updateReserve",produces = {"text/html;charset=utf-8"})
-    public void updateReserve(ReserveDto reserveDto, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void updateReserve(ReserveDto reserveDto,UpdateReserveDto urd, HttpServletRequest request, HttpServletResponse response) throws Exception {
         PrintWriter out = response.getWriter();
         try {
-            reserveDto = (ReserveDto) request.getSession().getAttribute("reserveDto");
+ //           reserveDto = (ReserveDto) request.getSession().getAttribute("reserveDto");
             //注入值
-            ReserveDto dto = new ReserveDto();
-            dto.setReserve_phone(reserveDto.getReserve_phone());
-            dto.setReserve_date(reserveDto.getReserve_date());
-            dto.setReserv_status(reserveDto.getReserv_status());
-            dto.setReserve_id(reserveDto.getReserve_id());
-
-            if (rs.updateReserve(reserveDto)) {
+//            urd.setReserve_phone(urd.getReserve_phone());
+//            urd.setReserve_date(urd.getReserve_date());
+//            urd.setReserv_status(urd.getReserv_status());
+//            urd.setReserve_id(urd.getReserve_id());
+            if (rs.updateReserve(urd)) {
                 out.print("<script>alert('修改成功');location.href='lookcarreserve.jsp';</script>");
             } else {
                 out.print("<script>alert('修改失败');history.go(-1);</script>");

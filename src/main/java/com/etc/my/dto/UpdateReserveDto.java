@@ -4,6 +4,15 @@ public class UpdateReserveDto {
     private String reserve_phone;//预约电话
     private String reserve_date;//预约时间
     private String reserv_status;//预约状态
+    private Integer reserve_id;
+
+    public Integer getReserve_id() {
+        return reserve_id;
+    }
+
+    public void setReserve_id(Integer reserve_id) {
+        this.reserve_id = reserve_id;
+    }
 
     public String getReserve_phone() {
         return reserve_phone;
