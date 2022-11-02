@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NEUC_Manager" />
+        <module name="neuc_-manager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

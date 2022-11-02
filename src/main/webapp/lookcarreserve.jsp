@@ -37,32 +37,26 @@
      */
     $(document).ready(function () {
 
-        allCar(1, 1);
+        allReserve(1, 3);
     })
     /**
      * 获取所有车辆
      * @param page
      * @param size
      */
-    function allCar(page, size) {
+    function allReserve(page, size) {
+        var user_name=document.getElementById("user_name").value;
+        var reserve_phone=document.getElementById("reserve_phone").value;
+        var reserve_date=document.getElementById("reserve_date").value;
         var car_name=document.getElementById("car_name").value;
-        var car_brand=document.getElementById("car_brand").value;
-        var car_dept=document.getElementById("car_dept").value;
-        var car_adress=document.getElementById("car_adress").value;
-        var car_regist=document.getElementById("car_regist").value;
-        var car_endurance=document.getElementById("car_endurance").value;
-        var car_color=document.getElementById("car_color").value;
-        var car_producetime=document.getElementById("car_producetime").value;
-        var car_power=document.getElementById("car_power").value;
-        var car_status=document.getElementById("car_status").value;
+        var reserv_status=document.getElementById("reserv_status").value;
+
 //发起ajax请求
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: "getCar.do",
-            data: {car_name: car_name,car_brand:car_brand,car_dept:car_dept,car_adress:car_adress,
-                car_endurance:car_endurance,car_regist:car_regist,car_color:car_color,car_producetime:car_producetime,
-                car_power:car_power,car_status:car_status,
+            url: "getReserve.do",
+            data: {user_name:user_name,reserve_phone:reserve_phone,reserve_date:reserve_date,car_name:car_name,reserv_status:reserv_status,
                 page: page, size: size},
             success: function (msg) {
                 // alert(msg);
@@ -74,14 +68,14 @@
 
                     // alert(msg);
                     str=str+'<tr class="gradeX">' +
-                        ' <td>'+content[i].car_name+'</td>' +
-                        '<td>'+content[i].car_brand+'</td>' +
-                        '<td>'+content[i].car_dept+'</td>' +
-                        '<td>'+content[i].car_color+'</td>' +
-                        '<td>'+content[i].car_status+'</td>' +
+                        ' <td>'+content[i].user_name+'</td>' +
+                        '<td>'+content[i].reserve_phone+'</td>' +
+                        '<td>'+content[i].reserve_date+'</td>' +
+                        '<td>'+content[i].car_name+'</td>' +
+                        '<td>'+content[i].reserv_status+'</td>' +
 
                         '<td style="text-align: center;">' +
-                        '<a class="btn btn-white btn-bitbucket" title="编辑" href="javascript:editcar(\''+content[i].car_id+'\')">' +
+                        '<a class="btn btn-white btn-bitbucket" title="编辑" href="javascript:editReserve(\''+content[i].reserve_id+'\')">' +
                         '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' +
                         '</a>' +
                         '<input type="hidden" value="123"/>' +
@@ -92,7 +86,7 @@
                         '</tr>' ;
                 }
 
-                $("#mycar").html(str);
+                $("#myreserve").html(str);
 
                 //上一页/下一页
                 var str1=
@@ -114,8 +108,8 @@
     }
 </script>
 <script>
-    function editcar(id) {
-        location.href="getCarById.do?cid="+id;
+    function editReserve(id) {
+        location.href="getReserveById.do?rid="+id;
     }
 </script>
 <body class="gray-bg">
@@ -137,56 +131,31 @@
                         <input type="hidden" name="" value=""/>
                         <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
                             <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input  id="car_name" placeholder="车辆名称" name="car_name" style="height: 29px;width: 120px;" class="form-control">
+                                <input  id="user_name" placeholder="预约用户" name="user_name" style="height: 29px;width: 120px;" class="form-control">
                             </div>
                         </div>
                         <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
                             <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text"  id="car_brand" placeholder="车辆品牌" name="car_brand" style="height: 29px;width: 120px;padding: 6px 5px;" class="form-control">
+                                <input type="text"  id="reserve_phone" placeholder="预约电话" name="reserve_phone" style="height: 29px;width: 120px;padding: 6px 5px;" class="form-control">
                             </div>
                         </div>
                         <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
                             <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text" placeholder="车辆系别" id="car_dept" name="car_dept" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
+                                <input type="text" placeholder="预约时间" id="reserve_date" name="reserve_date" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
                             </div>
                         </div>
                         <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
                             <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text"  placeholder="车辆地址" id="car_adress" name="car_adress"  style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
+                                <input type="text"  placeholder="预约车辆" id="car_name" name="car_name"  style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
                             </div>
                         </div>
                         <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
                             <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text" placeholder="车辆颜色"  id="car_color" name="car_color" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
-                            <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text" placeholder="车辆生产日期" id="car_producetime" name="car_producetime" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
-                            <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text"  placeholder="车辆总功率"  id="car_power" name="car_power" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
-                            <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text" placeholder="车辆续航里程" id="car_endurance" name="car_endurance" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
-                            <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text" placeholder="车辆上牌时间" id="car_regist" name="car_regist" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group" style="padding-right: 5px;padding-left: 5px;">
-                            <div class="col-sm-10" style="margin-bottom: 5px; margin-top:5px;padding-right: 0px;padding-left: 0px;">
-                                <input type="text" placeholder="车辆状态" id="car_status" name="car_status" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
+                                <input type="text" placeholder="预约状态"  id="reserv_status" name="reserv_status" style="height: 29px;width: 150px;padding: 6px 5px;" class="form-control">
                             </div>
                         </div>
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
-                            <input class="btn btn-white" type="button" onclick="javascript:allCar(0,1)" value="查询"></input>
+                            <input class="btn btn-white" type="button" onclick="javascript:allReserve(0,1)" value="查询"></input>
                         </div>
                     </form>
                 </div>
@@ -195,16 +164,16 @@
                     <table class="table table-striped table-bordered table-hover dataTables-example">
                         <thead>
                         <tr>
-                            <th>车辆名称</th>
-                            <th>车辆品牌</th>
-                            <th>车辆系别</th>
-                            <th>车辆颜色</th>
-                            <th>车辆状态</th>
+                            <th>预约用户</th>
+                            <th>预约电话</th>
+                            <th>预约时间</th>
+                            <th>预约车辆</th>
+                            <th>预约状态</th>
 
                             <th style="text-align: center;">操作</th>
                         </tr>
                         </thead>
-                        <tbody id="mycar">
+                        <tbody id="myreserve">
 
                         </tbody>
 

@@ -8,5 +8,57 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 mapper.xml以statement为单位管理sql语句
  -->
 
+    <!--动态查询预约信息-->
+    <select id="queryReserve" resultType="reserveDto" parameterType="reserveDto">
+       <!-- reservemsg数据库视图 -->
+        select * from reservemsg
+        <where>
+
+            <if test="reserve_phone!=null">
+                and reserve_phone like #{reserve_phone}
+
+            </if>
+            <if test="reserve_date!=null">
+                and reserve_date like #{reserve_date}
+
+            </if>
+            <if test="user_name!=null">
+                and user_name like #{user_name}
+
+            </if>
+            <if test="reserv_status!=null">
+                and reserv_status like #{reserv_status}
+
+            </if>
+            <if test="car_name!=null">
+                and car_name like #{car_name}
+
+            </if>
+
+        </where>
+        limit #{page},#{size}
+    </select>
+
+    <!--获取车辆总条数-->
+    <select id="getReserveCount" resultType="long">
+    select count(*) as allcount from t_reserve
+    </select>
+
+    <!--根据id修改预约信息-->
+    <update id="updateReserve" parameterType="updateReserveDto">
+     update t_reserve set reserve_phone=#{reserve_phone},reserve_date=#{reserve_date},reserv_status=#{reserv_status}
+      where reserve_id=#{reserve_id}
+    </update>
+
+    <!--根据id获取预约信息-->
+    <select id="getReserve" resultType="reserveDto">
+        select * FROM reservemsg where reserve_id=#{id}
+    </select>
+
+    <!---->
+    <select id="getAllReserve" resultType="reserveDto">
+        select * from reservemsg
+    </select>
+
 </mapper>
 
