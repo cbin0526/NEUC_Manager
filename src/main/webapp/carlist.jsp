@@ -26,11 +26,25 @@
     <link type="text/css" rel="stylesheet" href="css/laydate.css">
     <link type="text/css" rel="stylesheet" href="css/laydate1.css">
     <script src="js/jquery-1.7.2.min_1.js"></script>
+    <link rel="stylesheet" href="js/jsuggest.css">
+    <script src="js/jSuggest.js"></script>
 </head>
-<script>
+<%--<script>--%>
+<%--$(document).ready(function () {--%>
+   <%--$("#car_name").jSuggest({--%>
+       <%--minchar:1,--%>
+       <%--opactiy:1.0,--%>
+       <%--zindex:20000,--%>
+       <%--delay:2500,--%>
+       <%--url:"getCar.do",--%>
+       <%--type:"GET",--%>
+       <%--data:"car",--%>
+       <%--autoChange:true--%>
+   <%--})--%>
 
+<%--})--%>
 
-</script>
+<%--</script>--%>
 <script>
     /**
  * 页面加载后显示
