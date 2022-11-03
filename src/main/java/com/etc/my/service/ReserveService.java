@@ -1,10 +1,8 @@
 package com.etc.my.service;
 
 import com.etc.my.dto.ReserveDto;
-import com.etc.my.entity.Reserve;
 
 import java.util.List;
-import java.util.Map;
 
 public interface ReserveService {
     /**
@@ -28,7 +26,7 @@ public interface ReserveService {
      * @return
      * @author yyb
      */
-    List<Reserve> queryReserve(ReserveDto reserveDto);
+    List<ReserveDto> queryReserve(ReserveDto reserveDto);
 
     /**
      *查询预约总条数

@@ -45,7 +45,7 @@ mapper.xml以statement为单位管理sql语句
     </select>
 
     <!--根据id修改预约信息-->
-    <update id="updateReserve" parameterType="updateReserveDto">
+    <update id="updateReserve" parameterType="reserveDto">
      update t_reserve set reserve_phone=#{reserve_phone},reserve_date=#{reserve_date},reserv_status=#{reserv_status}
       where reserve_id=#{reserve_id}
     </update>

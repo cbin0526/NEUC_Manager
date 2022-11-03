@@ -3,13 +3,11 @@ package com.etc.my.service.impl;
 
 import com.etc.my.dao.ReserveDao;
 import com.etc.my.dto.ReserveDto;
-import com.etc.my.entity.Reserve;
 import com.etc.my.service.ReserveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class ReserveServiceImpl implements ReserveService {
@@ -38,7 +36,7 @@ public class ReserveServiceImpl implements ReserveService {
     }
 
     @Override
-    public List<Reserve> queryReserve(ReserveDto reserveDto) {
+    public List<ReserveDto> queryReserve(ReserveDto reserveDto) {
         return dao.queryReserve(reserveDto);
     }
 

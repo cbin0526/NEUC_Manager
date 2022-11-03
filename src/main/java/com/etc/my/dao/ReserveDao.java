@@ -29,7 +29,7 @@ public interface ReserveDao {
      * @return
      * @author yyb
      */
-    List<Reserve> queryReserve(ReserveDto reserveDto);
+    List<ReserveDto> queryReserve(ReserveDto reserveDto);
 
     /**
      *查询预约总条数

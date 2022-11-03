@@ -1,6 +1,7 @@
 package com.etc.my.controller;
 
 import com.etc.my.dto.*;
+import com.etc.my.entity.Reserve;
 import com.etc.my.service.ReserveService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,7 @@ public class ReserveController {
         reserveDto.setSize(size);
         reserveDto.setPage((page - 1) * size);
         reserveDto.setMaxPage(maxPage);
-        List<ReserveDto> list = rs.getAllReserve(reserveDto);
+        List<ReserveDto> list = rs.queryReserve(reserveDto);
         myMessage.setData(reserveDto);
         myMessage.setOlist(list);
         myMessage.setPage(page);

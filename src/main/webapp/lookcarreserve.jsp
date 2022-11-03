@@ -155,7 +155,7 @@
                             </div>
                         </div>
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
-                            <input class="btn btn-white" type="button" onclick="javascript:allReserve(0,1)" value="查询"></input>
+                            <input class="btn btn-white" type="button" onclick="javascript:allReserve(1,3)" value="查询"></input>
                         </div>
                     </form>
                 </div>
