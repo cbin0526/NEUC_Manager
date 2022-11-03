@@ -7,6 +7,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象
 mapper.xml以statement为单位管理sql语句
  -->
+    <select id="selectAllPush" resultType="push">
+        SELECT * FROM t_push ORDER BY push_status desc limit #{param1},#{param2}
+    </select>
 
+    <select id="countAllPush" resultType="countDto">
+        select Count(*) as allCount from t_push
+    </select>
+
+    <select id="queryOnePushById" resultType="pushDto">
+        select * from t_push where push_id=#{push_id}
+    </select>
+
+    <update id="updatePushStatueAndCarid">
+        update t_push set push_status = '已推送' ,push_car = #{param1} where push_id = #{param2}
+    </update>
 </mapper>
 
