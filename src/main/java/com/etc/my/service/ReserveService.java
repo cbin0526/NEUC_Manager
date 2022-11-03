@@ -1,7 +1,6 @@
 package com.etc.my.service;
 
 import com.etc.my.dto.ReserveDto;
-import com.etc.my.dto.UpdateReserveDto;
 import com.etc.my.entity.Reserve;
 
 import java.util.List;
@@ -44,12 +43,12 @@ public interface ReserveService {
      * @return
      * @author yyb
      */
-    boolean updateReserve(UpdateReserveDto updateReserveDto);
+    boolean updateReserve(ReserveDto reserveDto);
 
 
     /**
      * 获取预约信息
-     * @param map
+     * @param reserveDto
      * @return
      */
     List<ReserveDto> getAllReserve(ReserveDto reserveDto);

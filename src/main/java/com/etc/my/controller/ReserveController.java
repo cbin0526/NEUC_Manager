@@ -78,16 +78,10 @@ public class ReserveController {
 
     //修改预约信息
     @RequestMapping(value = "/updateReserve",produces = {"text/html;charset=utf-8"})
-    public void updateReserve(ReserveDto reserveDto,UpdateReserveDto urd, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void updateReserve(ReserveDto reserveDto, HttpServletRequest request, HttpServletResponse response) throws Exception {
         PrintWriter out = response.getWriter();
         try {
- //           reserveDto = (ReserveDto) request.getSession().getAttribute("reserveDto");
-            //注入值
-//            urd.setReserve_phone(urd.getReserve_phone());
-//            urd.setReserve_date(urd.getReserve_date());
-//            urd.setReserv_status(urd.getReserv_status());
-//            urd.setReserve_id(urd.getReserve_id());
-            if (rs.updateReserve(urd)) {
+            if (rs.updateReserve(reserveDto)) {
                 out.print("<script>alert('修改成功');location.href='lookcarreserve.jsp';</script>");
             } else {
                 out.print("<script>alert('修改失败');history.go(-1);</script>");

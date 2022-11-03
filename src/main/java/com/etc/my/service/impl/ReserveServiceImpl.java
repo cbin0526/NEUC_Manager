@@ -3,7 +3,6 @@ package com.etc.my.service.impl;
 
 import com.etc.my.dao.ReserveDao;
 import com.etc.my.dto.ReserveDto;
-import com.etc.my.dto.UpdateReserveDto;
 import com.etc.my.entity.Reserve;
 import com.etc.my.service.ReserveService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +49,8 @@ public class ReserveServiceImpl implements ReserveService {
     }
 
     @Override
-    public boolean updateReserve(UpdateReserveDto updateReserveDto) {
-        return dao.updateReserve(updateReserveDto);
+    public boolean updateReserve(ReserveDto reserveDto) {
+        return dao.updateReserve(reserveDto);
     }
 
     @Override

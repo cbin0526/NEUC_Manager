@@ -3,9 +3,7 @@ package com.etc.my.dao;
 
 
 import com.etc.my.dto.ReserveDto;
-import com.etc.my.dto.UpdateReserveDto;
 import com.etc.my.entity.Reserve;
-
 import java.util.List;
 import java.util.Map;
 
@@ -42,16 +40,16 @@ public interface ReserveDao {
 
     /**
      * 修改预约信息
-     * @param updateReserveDto
+     * @param reserveDto
      * @return
      * @author yyb
      */
-    boolean updateReserve(UpdateReserveDto updateReserveDto);
+    boolean updateReserve(ReserveDto reserveDto);
 
 
     /**
      * 获取预约信息
-     * @param map
+     * @param reserveDto
      * @return
      */
     List<ReserveDto> getAllReserve(ReserveDto reserveDto);
