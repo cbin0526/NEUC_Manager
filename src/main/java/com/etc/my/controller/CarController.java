@@ -267,7 +267,6 @@ public class CarController {
         try {
 
             CarAndPicDto carAndPicDto = (CarAndPicDto) request.getSession().getAttribute("carDto");
-            ;
             //注入值
             car.setCar_name(car.getCar_name());
             car.setCar_brand(car.getCar_brand());
@@ -337,4 +336,6 @@ public class CarController {
     public List<CarBrandnumVo> queryCarBrandAndNum(){
        return carService.queryCarBrandAndNum();
     }
+
+
 }

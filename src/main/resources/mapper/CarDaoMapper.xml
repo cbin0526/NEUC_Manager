@@ -87,5 +87,9 @@
     <select id="queryCarBrandAndNum" resultType="CarBrandnumVo">
         select  count(*) as car_brandnum,car_brand FROM t_car GROUP BY car_brand
     </select>
+
+    <select id="queryCarIdByNameBrandDept" resultType="car">
+        select * from t_car where car_name like #{param1} and car_brand like #{param2} and car_dept like #{param3}
+    </select>
 </mapper>
 

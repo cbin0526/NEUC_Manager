@@ -279,4 +279,31 @@ public class CarServiceImpl implements CarService {
     public List<CarBrandnumVo> queryCarBrandAndNum() {
         return dao.queryCarBrandAndNum();
     }
+
+    /**
+     * 通过汽车名字品牌类型模糊查询
+     *
+     * @param car_name
+     * @param car_brand
+     * @param car_dept
+     * @return
+     */
+    @Override
+    public String queryCarIdByNameBrandDept(String car_name, String car_brand, String car_dept) {
+        if(car_brand == null){
+            car_dept  = "";
+        }else if(car_dept == null){
+            car_brand = "";
+        }else if(car_name == null){
+            car_name = "";
+        }
+        car_dept = "%"+car_dept+"%";
+        car_brand = "%"+car_brand+"%";
+        car_name = "%"+car_name+"%";
+        List<Car> car = dao.queryCarIdByNameBrandDept(car_name, car_brand, car_dept);
+        if(car != null | car.size() >0){
+           return car.get(0).getCar_id();
+        }
+        return null;
+    }
 }

@@ -64,4 +64,13 @@ public interface CarDao {
      * @return
      */
     List<CarBrandnumVo> queryCarBrandAndNum();
+
+    /**
+     * 通过汽车名字品牌类型模糊查询
+     * @param car_name
+     * @param car_brand
+     * @param car_dept
+     * @return
+     */
+    List<Car> queryCarIdByNameBrandDept(String car_name,String car_brand,String car_dept);
 }
