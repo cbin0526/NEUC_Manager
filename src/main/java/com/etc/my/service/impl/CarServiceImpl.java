@@ -10,6 +10,7 @@ import com.etc.my.dto.PicDto2;
 import com.etc.my.entity.Car;
 import com.etc.my.entity.Pic;
 import com.etc.my.service.CarService;
+import com.etc.my.vo.CarBrandnumVo;
 import javafx.scene.text.Font;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -267,5 +268,15 @@ public class CarServiceImpl implements CarService {
 
         }
         return hssfWorkbook;
+    }
+
+
+    /**
+     * 查询车辆品牌和数量
+     * @return
+     */
+    @Override
+    public List<CarBrandnumVo> queryCarBrandAndNum() {
+        return dao.queryCarBrandAndNum();
     }
 }

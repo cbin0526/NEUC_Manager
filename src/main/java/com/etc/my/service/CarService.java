@@ -6,6 +6,7 @@ import com.etc.my.dto.CarDto;
 import com.etc.my.dto.PicDto;
 import com.etc.my.dto.PicDto2;
 import com.etc.my.entity.Car;
+import com.etc.my.vo.CarBrandnumVo;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.util.List;
@@ -79,4 +80,10 @@ public interface CarService {
      * @return
      */
     HSSFWorkbook exportExcel(Map<String,Object> map);
+
+    /**
+     * 查询车辆品牌和数量
+     * @return
+     */
+    List<CarBrandnumVo> queryCarBrandAndNum();
 }

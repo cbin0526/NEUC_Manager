@@ -83,5 +83,9 @@
         select * from t_car
     </select>
 
+
+    <select id="queryCarBrandAndNum" resultType="CarBrandnumVo">
+        select  count(*) as car_brandnum,car_brand FROM t_car GROUP BY car_brand
+    </select>
 </mapper>
 

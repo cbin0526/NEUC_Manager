@@ -6,6 +6,7 @@ import com.etc.my.entity.Car;
 import com.etc.my.entity.User;
 import com.etc.my.service.CarService;
 import com.etc.my.service.UserService;
+import com.etc.my.vo.CarBrandnumVo;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -329,5 +330,11 @@ public class CarController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @RequestMapping("/queryCarBrandAndNum")
+    @ResponseBody
+    public List<CarBrandnumVo> queryCarBrandAndNum(){
+       return carService.queryCarBrandAndNum();
     }
 }

@@ -5,6 +5,7 @@ import com.etc.my.dto.CarAndPicDto;
 import com.etc.my.dto.CarDto;
 import com.etc.my.dto.PageDto;
 import com.etc.my.entity.Car;
+import com.etc.my.vo.CarBrandnumVo;
 
 import java.util.List;
 import java.util.Map;
@@ -58,4 +59,9 @@ public interface CarDao {
     List<CarDto> getAllCar(Map<String, Object> map);
 
 
+    /**
+     * 获取车辆品牌和数量
+     * @return
+     */
+    List<CarBrandnumVo> queryCarBrandAndNum();
 }

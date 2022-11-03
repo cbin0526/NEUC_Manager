@@ -8,5 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 mapper.xml以statement为单位管理sql语句
  -->
 
+    <select id="seletCarBrandAndNumByOrderTime" resultType="carBrandnumVo">
+        SELECT count(*) as car_brandnum,car_brand FROM t_car_order WHERE order_datetime like #{car_datatime} GROUP BY car_brand
+    </select>
 </mapper>
 
