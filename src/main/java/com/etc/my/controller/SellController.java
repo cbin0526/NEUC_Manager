@@ -48,6 +48,11 @@ public class SellController {
             if(sokd.getSize()!=null||sokd.getSize()>0){
                 size=sokd.getSize();
             }
+        sokd.setSell_address("%"+sokd.getSell_address()+"%");
+        sokd.setSell_cardept("%"+sokd.getSell_cardept()+"%");
+        sokd.setSell_carname("%"+sokd.getSell_carname()+"%");
+        sokd.setSell_phone("%"+sokd.getSell_phone()+"%");
+        sokd.setSell_status("%"+sokd.getSell_status()+"%");
             //获取总条数
             Integer allCount = ss.getSellCount(sokd).getAllCount();
             if(allCount>=0&&allCount!=null){
@@ -66,11 +71,7 @@ public class SellController {
                 sokd.setPage((page-1)*size);
                 sokd.setSize(size);
 
-                sokd.setSell_address("%"+sokd.getSell_address()+"%");
-                sokd.setSell_cardept("%"+sokd.getSell_cardept()+"%");
-                sokd.setSell_carname("%"+sokd.getSell_carname()+"%");
-                sokd.setSell_phone("%"+sokd.getSell_phone()+"%");
-                sokd.setSell_status("%"+sokd.getSell_status()+"%");
+
                 //调用方法查询
                 List<Sell> pushList = ss.getSellByKeysOfPage(sokd);
                 if(pushList.size()>0&&pushList!=null){

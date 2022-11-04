@@ -90,15 +90,17 @@
 
                 //上一页/下一页
                 var str1=
-                    '<a href="javascript:allSession(1,' +size
+                    '<a href="javascript:allReserve(1,' +size
                     + ')">首页</a>&nbsp;&nbsp;&nbsp;'+
-                    '<a href="javascript:allSession('+(page-1)+',' + size
+                    '<a href="javascript:allReserve('+(page-1)+',' + size
                     + ')">上一页</a>&nbsp;&nbsp;&nbsp;'+
                     // + '<span id="myspan"></span>'+
-                    '<a href="javascript:allSession('+(page+1)+',' + size
+                    '<a href="javascript:allReserve('+(page+1)+',' + size
                     + ')">下一页</a>&nbsp;&nbsp;&nbsp;'+
-                    '<a href="javascript:allSession('+maxPage+',' + size
-                    + ')">尾页</a>';
+                    '<a href="javascript:allReserve('+maxPage+',' + size
+                    + ')">尾页</a>'+
+                        '<div>共&nbsp;&nbsp;'+maxPage+'&nbsp;&nbsp;页&nbsp;&nbsp;当前第&nbsp;&nbsp;'+page+'&nbsp;&nbsp;页'+
+                        '</div>' ;
 
                 $("#myindex").html(str1);
 

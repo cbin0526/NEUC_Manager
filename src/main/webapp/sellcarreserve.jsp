@@ -70,11 +70,18 @@
                              '</tr>' ;
                      }
 
-                     var str1 = ''
-                     str1='<a href="javaScript:getsell(1,3)">首页</a>&nbsp;'+
-                         '<a href="javaScript:getsell('+(msg.data.page-1)+',3)">上一页</a>&nbsp;'+
-                         '<a href="javaScript:getsell('+(msg.data.page+1)+',3)">下一页</a>&nbsp;'+
-                         '<a href="javaScript:getsell('+msg.data.maxPage+',3)">尾页</a>' ;
+
+                     var str1 = '<a href="javascript:getsell(1,' +msg.data.size
+                         + ')">首页</a>&nbsp;&nbsp;&nbsp;'+
+                         '<a href="javascript:getsell('+(msg.data.page-1)+',' + msg.data.size
+                         + ')">上一页</a>&nbsp;&nbsp;&nbsp;'+
+                         // + '<span id="myspan"></span>'+
+                         '<a href="javascript:getsell('+(msg.data.page+1)+',' + msg.data.size
+                         + ')">下一页</a>&nbsp;&nbsp;&nbsp;'+
+                         '<a href="javascript:getsell('+msg.data.maxPage+',' + msg.data.size
+                         + ')">尾页</a>'+
+                         '<div>共&nbsp;&nbsp;'+msg.data.maxPage+'&nbsp;&nbsp;页&nbsp;&nbsp;当前第&nbsp;&nbsp;'+msg.data.page+'&nbsp;&nbsp;页'+
+                         '</div>' ;
 
                      $("#selllist").html(str);
                      $("#pageandsize").html(str1);
