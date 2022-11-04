@@ -123,7 +123,7 @@
                     <ul class="nav nav-second-level">
                         <li>
                             <a class="J_menuItem" href="">订单编辑</a>
-                            <a class="J_menuItem" href="">订单查询</a>
+                            <a class="J_menuItem" href="orderselect.jsp">订单查询</a>
                         </li>
                     </ul>
                 </li>

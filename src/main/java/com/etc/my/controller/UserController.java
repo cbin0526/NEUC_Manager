@@ -49,7 +49,6 @@ public class UserController {
         if(isFish.isFish(request)){
             User user=us.checkLogin(user_name,user_pwd);
 
-
             if(user!=null&&"admin".equals(user_name)&&"123".equals(user_pwd)){
                 request.getSession().setAttribute("loginuser",user);
                 out.print("<script>alert('登录成功');location.href='index.jsp'</script>");

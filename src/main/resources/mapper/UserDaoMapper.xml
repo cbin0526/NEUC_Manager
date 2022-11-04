@@ -25,5 +25,10 @@ mapper.xml以statement为单位管理sql语句
     <select id="check" resultType="user">
         select * from t_user where user_name=#{param1} and user_pwd=#{param2}
     </select>
+
+    <!--根据id查找用户-->
+    <select id="queryUserById" resultType="user">
+        select user_name from t_user where user_id = #{id}
+    </select>
 </mapper>
 

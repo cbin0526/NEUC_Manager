@@ -12,6 +12,24 @@ public class Order {
     private User  order_user;//下单用户
     private String order_status;//订单状态
     private Double order_price;//订单价格
+    private Integer page;
+    private Integer size;
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
 
     public Integer getOrder_id() {
         return order_id;

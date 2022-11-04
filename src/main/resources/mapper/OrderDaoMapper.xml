@@ -7,6 +7,60 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MappedStatement对象
 mapper.xml以statement为单位管理sql语句
  -->
+    <select id="queryOrder"  parameterType="orderDto" resultType="orderDto">
+        select o.order_code,o.order_datetime,u.user_name,c.car_name,o.order_status,o.order_price from t_order o inner join t_user u on order_user = user_id inner join t_car c on order_car = car_id
+        <where>
+            <if test="order_code">
+              and  o.order_code like #{order_code}
+            </if>
+            <if test="order_datetime !=null">
+              and  o.order_datetime like #{order_datetime}
+            </if>
+            <if test="user_name !=null">
+               and  u.user_name like #{user_name}
+            </if>
+            <if test="car_name !=null">
+               and c.car_name  like #{car_name}
+            </if>
+            <if test="order_status !=null">
+               and o.order_status like #{order_status}
+            </if>
+            <if test="order_price!=null">
+               and o.order_price like #{order_price}
+            </if>
+        </where>
+        limit #{page},#{size}
+    </select>
+
+    <select id="queryOrderCount" resultType="countDto" parameterType="orderDto">
+        select count(*) as allCount from t_order o inner join t_user u on order_user = user_id inner join t_car c on order_car = car_id
+        <where>
+            <if test="order_code">
+               and o.order_code like #{order_code}
+            </if>
+            <if test="order_datetime !=null">
+               and o.order_datetime like #{order_datetime}
+            </if>
+            <if test="user_name !=null">
+              and u.user_name  like #{user_name}
+            </if>
+            <if test="car_name !=null">
+              and c.car_name  like #{car_name }
+            </if>
+            <if test="order_status !=null">
+               and o.order_status like #{order_status}
+            </if>
+            <if test="order_price!=null">
+               and o.order_price like #{order_price}
+            </if>
+        </where>
+    </select>
+
+
+<!--    导出excel表获取数据库信息-->
+    <select id="queryAllOrder"  resultType="orderDto">
+        select o.order_code,o.order_datetime,u.user_name,c.car_name,o.order_status,o.order_price from t_order o inner join t_user u on order_user = user_id inner join t_car c on order_car = car_id
+    </select>
 
     <select id="seletCarBrandAndNumByOrderTime" resultType="carBrandnumVo">
         SELECT count(*) as car_brandnum,car_brand FROM t_car_order WHERE order_datetime like #{car_datatime} GROUP BY car_brand

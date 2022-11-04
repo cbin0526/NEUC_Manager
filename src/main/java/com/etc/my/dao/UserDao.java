@@ -24,5 +24,5 @@ public interface UserDao {
      */
     User check(String user_name,String user_pwd);
 
-
+    User queryUserById(Integer id);
 }
