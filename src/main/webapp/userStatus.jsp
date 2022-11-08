@@ -54,7 +54,7 @@ $(document).ready(function () {
     selectUser(1,5);
 })
     /**
-     * 获取所有订单
+     * 获取所有用户
      * @param page
      * @param size
      */
@@ -114,7 +114,6 @@ $(document).ready(function () {
                         '<td style="text-align: center;">' +
                           '<input type="button" value="禁用" onclick="changeUserStatus('+content[i].user_id+',\'禁用\''+')">' +'  '+
                           '<input type="button" value="启用" onclick="changeUserStatus('+content[i].user_id+',\'启用\''+')">' +
-
                           '</td>' +
                         '</tr>';
                       }
@@ -162,7 +161,7 @@ $(document).ready(function () {
 <script>
     //导出excel文件
     function exportCarExcel(){
-        location.href="exportOrderExcel.do";
+        location.href="exportUserExcel.do";
     }
 </script>
 
@@ -233,7 +232,7 @@ $(document).ready(function () {
                         </div>
 
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
-                            <input class="btn btn-white" type="button" onclick="javascript:selectUser(0,5)" value="查询"></input>
+                            <input class="btn btn-white" type="button" onclick="javascript:selectUser(1,5)" value="查询"></input>
                         </div>
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
                             <input class="btn btn-white" type="button" onclick="javascript:exportCarExcel()" value="导出文件"></input>

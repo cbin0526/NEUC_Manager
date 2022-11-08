@@ -5,6 +5,7 @@ import com.etc.my.dto.UserDto;
 import com.etc.my.entity.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserDao {
 
@@ -49,4 +50,11 @@ public interface UserDao {
      * @return
      */
     CountDto getUserCount(UserDto user);
+
+    /**
+     * 查询所有的用户
+     * @param map
+     * @return
+     */
+    List<User> queryAllUser(Map<String,Object> map);
 }
