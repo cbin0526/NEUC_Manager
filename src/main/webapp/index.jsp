@@ -56,14 +56,14 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="">用户账号禁用</a>
+                            <a class="J_menuItem" href="userStatus.jsp">用户账号查询</a>
                         </li>
-                        <li>
-                            <a class="J_menuItem" href="">用户密码修改</a>
-                        </li>
-                        <li>
-                            <a class="J_menuItem" href="">用户信息搜索</a>
-                        </li>
+                        <%--<li>--%>
+                            <%--<a class="J_menuItem" href="">用户密码修改</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a class="J_menuItem" href="">用户信息搜索</a>--%>
+                        <%--</li>--%>
                     </ul>
                 </li>
                 <li class="line dk"></li>

@@ -10,7 +10,7 @@ mapper.xml以statement为单位管理sql语句
 
 
     <select id="queryAllUser" resultType="user">
-        select *from t_user
+        select * from t_user
     </select>
 
 
@@ -29,6 +29,40 @@ mapper.xml以statement为单位管理sql语句
     <!--根据id查找用户-->
     <select id="queryUserById" resultType="user">
         select user_name from t_user where user_id = #{id}
+    </select>
+
+    <update id="updateUserStatus">
+        update t_user set user_status=#{param2} where user_id=#{param2}
+    </update>
+
+    <sql id="usercondition">
+        <if test="user_id!=null">
+            and user_id=#{user_id}
+        </if>
+        <if test="user_name!=null">
+            and user_name like #{user_name}
+        </if>
+        <if test="user_idcard!=null">
+            and user_idcard like #{user_idcard}
+        </if>
+        <if test="user_status!=null">
+            and user_status like #{user_status}
+        </if>
+    </sql>
+
+    <select id="queryUserByCondition" parameterType="user" resultType="user">
+        select * from t_user
+        <where>
+          <include refid="usercondition"></include>
+        </where>
+        limit #{page},#{size}
+    </select>
+
+    <select id="getUserCount" parameterType="userDto" resultType="countDto">
+        select count(*) as allCount from t_user
+        <where>
+            <include refid="usercondition"></include>
+        </where>
     </select>
 </mapper>
 
