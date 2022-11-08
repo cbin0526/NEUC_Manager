@@ -109,7 +109,7 @@ public class UserServiceImpl implements UserService {
         sheet.addMergedRegion(rangeAddress);
         //设置样式
         hssfCell.setCellStyle(hssfCellStyle);
-        hssfCell.setCellValue("订单列表信息");
+        hssfCell.setCellValue("用户列表信息");
 
         //----------设置第二行-----------
         HSSFRow row2 = sheet.createRow(1);
@@ -170,7 +170,7 @@ public class UserServiceImpl implements UserService {
                 hssfCell1=hssfRow.createCell(4);
                 hssfCell.setCellStyle(hssfCellStyle2);
                 hssfCell1.setCellValue(user.getUser_status());
-
+                valueStatrRow++;
             }
 
         }
