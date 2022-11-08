@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title> - 登录</title>
+    <title>登录</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-sm-12">
             <form method="post" action="checkLogin.do" id="form" autocomplete="off">
-                <h4 class="no-margins">登录：<font color="red">咸鱼二手车后台系统</font></h4>
+                <h4 class="no-margins">登录：<font color="red">蓝瓜二手车后台系统</font></h4>
 
                 <input autocomplete="off" type="text" class="form-control uname" name="user_name" placeholder="用户名" value=""/>
                 <input autocomplete="off" type="password" class="form-control pword m-b" name="user_pwd" placeholder="密码" value=""/>

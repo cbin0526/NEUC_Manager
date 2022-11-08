@@ -112,9 +112,10 @@ $(document).ready(function () {
                           '<td>' + content[i].user_idcard + '</td>' +
                         '<td>' + content[i].user_status + '</td>' +
                         '<td style="text-align: center;">' +
-                          '<input type="button" value="禁用" onclick="javascript:changeUserStatus('+content[i].user_id+','+'"/禁用/"'+')">' +'  '+
-                          '<input type="button" value="启用" onclick="javascript:changeUserStatus('+content[i].user_id+','+'"/禁用/"'+')">' +
-                        '</td>' +
+                          '<input type="button" value="禁用" onclick="changeUserStatus('+content[i].user_id+',\'禁用\''+')">' +'  '+
+                          '<input type="button" value="启用" onclick="changeUserStatus('+content[i].user_id+',\'启用\''+')">' +
+
+                          '</td>' +
                         '</tr>';
                       }
 
@@ -167,6 +168,7 @@ $(document).ready(function () {
 
 <script>
     function changeUserStatus(user_id,user_status){
+
         $.ajax({
             type:"GET",
             url:"changeUserStatus.do",

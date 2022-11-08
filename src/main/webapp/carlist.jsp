@@ -51,7 +51,7 @@
  */
 $(document).ready(function () {
 
-    allCar(1, 3);
+    allCar(1,5);
 })
     /**
      * 获取所有车辆
@@ -136,7 +136,7 @@ $(document).ready(function () {
                                 + i + "页</option>";
                         } else {
                             str3 = str3 + "<a href='javascript:allCar("
-                                + i + ",4)'>第" + i
+                                + i + ",5)'>第" + i
                                 + "页</a>&nbsp;&nbsp;"
                             str4 = str4 + "<option  value='"+i+"'>第"
                                 + i + "页</option>";
@@ -233,7 +233,7 @@ $(document).ready(function () {
                             </div>
                         </div>
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
-                            <input class="btn btn-white" type="button" onclick="javascript:allCar(0,1)" value="查询"></input>
+                            <input class="btn btn-white" type="button" onclick="javascript:allCar(0,5)" value="查询"></input>
                         </div>
                         <div class="checkbox m-l m-r-xs" style="margin-left: 0px; margin-top:5px;">
                             <input class="btn btn-white" type="button" onclick="javascript:exportCarExcel()" value="导出文件"></input>
@@ -266,7 +266,7 @@ $(document).ready(function () {
 
                 </div>
                     <div align="center">
-                    <select id="myselected" onchange="allCar(this.value,3)"></select>
+                    <select id="myselected" onchange="allCar(this.value,5)"></select>
                 </div>
                 </div>
                 </div>

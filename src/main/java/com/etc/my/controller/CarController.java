@@ -176,11 +176,15 @@ public class CarController {
         //page，size默认值
 
         //size.page.maxPage容错
-        size = size <= 0 ? 5 : size;
-        page = page <= 0 ? 1 : page;
+
         Long count = carService.getCarCount();
         Integer maxPage = (int) (count % size == 0 ? (count / size) : (count / size + 1));
+        //页数条数上限容错
         page = page > maxPage ? maxPage : page;
+        size = size > 5 ? 5 : size;
+        //页数条数下限容错
+        page = page <= 0 ? 1 : page;
+        size = size <= 0 ? 5 : size;
         car.setSize(size);
         car.setPage((page - 1) * size);
         car.setMaxPage(maxPage);

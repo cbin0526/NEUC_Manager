@@ -32,7 +32,7 @@ mapper.xml以statement为单位管理sql语句
     </select>
 
     <update id="updateUserStatus">
-        update t_user set user_status=#{param2} where user_id=#{param2}
+        update t_user set user_status=#{param2} where user_id=#{param1}
     </update>
 
     <sql id="usercondition">

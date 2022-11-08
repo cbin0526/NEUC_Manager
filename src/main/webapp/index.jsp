@@ -29,7 +29,7 @@
                                 <span class="clear">
                                     <span class="block m-t-xs" style="font-size:20px;">
 
-                                        <strong class="font-bold">咸鱼新能源二手车后台管理系统</strong>
+                                        <strong class="font-bold">蓝瓜新能源二手车后台管理系统</strong>
                                     </span>
                                 </span>
                         </a>
