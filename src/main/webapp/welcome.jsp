@@ -38,10 +38,6 @@
                     <div id="car_brand" style="width: 490px;height: 500px;float: left;"></div>
                     <div id="car_order" style="width: 490px;height: 500px;float: left;"></div>
                     <div style="float: left;">
-<%--                        2022年十月<input type="radio" value="2022-10" name="mounth"><br>--%>
-<%--                        2022年九月<input type="radio" value="2022-10" name="mounth"><br>--%>
-<%--                        2022年八月<input type="radio" value="2022-10" name="mounth"><br>--%>
-<%--                        2022年七月<input type="radio" value="2022-10" name="mounth"><br>--%>
                         <input type="month" onchange="car_ordertime()" id="mouth">
                     </div>
                 </div>
@@ -60,27 +56,20 @@
             url:"queryCarBrandAndNum.do",
             dataType:"json",
             success:function (msg){
+               let servicedata = [];
                 for(let i = 0;i < msg.length; i++){
-                    xlist[i] = msg[i].car_brand;
-                    ylist[i] = msg[i].car_brandnum;
+                    var obj=new Object();
+                    obj.name=msg[i].car_brand;
+                    obj.value=msg[i].car_brandnum;
+                    servicedata[i]=obj;
                 }
                 var option = {
-                    title: {
-                        text: '车辆品牌分布'
-                    },
-                    //tooltip: {},
-                    legend: {
-                        data:['数量']
-                    },
-                    xAxis: {
-                        data: xlist,
-                    },
-                    yAxis: {},
-                    series: [{
-                        name: '数量',
-                        type: 'pie',
-                        data: ylist,
-                    }]
+                    series: [
+                        {
+                            type: 'pie',
+                            data: servicedata
+                        }
+                    ]
                 };
                 //5.将配置项设置给echarts实例对象，使用刚指定的配置项和数据显示图表。
                 myChart.setOption(option);
