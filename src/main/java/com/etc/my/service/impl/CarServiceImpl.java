@@ -297,8 +297,8 @@ public class CarServiceImpl implements CarService {
         }else if(car_name == null){
             car_name = "";
         }
-        car_dept = "%"+car_dept+"%";
-        car_brand = "%"+car_brand+"%";
+        car_dept = "% "+car_dept+"%";
+        car_brand = "%"+car_brand+" %";
         car_name = "%"+car_name+"%";
         List<Car> car = dao.queryCarIdByNameBrandDept(car_name, car_brand, car_dept);
         if(car != null && car.size() >0){
