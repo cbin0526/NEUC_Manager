@@ -7,6 +7,7 @@ import com.etc.my.dto.UserDto;
 import com.etc.my.entity.User;
 import com.etc.my.service.UserService;
 import com.etc.my.util.IsFish;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -16,8 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class UserController {
@@ -168,6 +171,25 @@ public class UserController {
 
     }
 
+    //导出excel文件
+    @RequestMapping("/exportUserExcel")
+    @ResponseBody
+    public String exportUserExcel(HttpServletResponse response, Map<String, Object> params) {
 
+        HSSFWorkbook workbook = us.exportExcel(params);
+        try {
+            if (response != null) {
+                response.setContentType("application/vnd.ms-excel;charset=utf-8");
+                response.setHeader("Content-Disposition",
+                        "attachment;filename=\"" + new String(("用户数据信息表" + ".xls").getBytes("gb2312"), "ISO8859-1"));
+                OutputStream out = response.getOutputStream();
+                workbook.write(out);
+                out.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

@@ -106,41 +106,46 @@ public class CarController {
         }
         try {
             //注入值
-            UUID uuid = UUID.randomUUID();
-            car.setCar_name(car.getCar_name());
-            car.setCar_brand(car.getCar_brand());
-            car.setCar_dept(car.getCar_dept());
-            car.setCar_price(car.getCar_price());
-            car.setCar_regist(car.getCar_regist());
-            car.setCar_mile(car.getCar_mile());
-            car.setCar_at(car.getCar_at());
-            car.setCar_dc(car.getCar_dc());
-            car.setCar_newprice(car.getCar_newprice());
-            car.setCar_transfer(car.getCar_transfer());
-            car.setCar_power(car.getCar_power());
-            car.setCar_adress(car.getS_city());
-            car.setCar_endurance(car.getCar_endurance());
-            car.setCar_capacity(car.getCar_capacity());
-            car.setCar_color(car.getCar_color());
-            car.setCar_producetime(car.getCar_producetime());
-            car.setCar_keynum(car.getCar_keynum());
-            car.setCar_status(car.getCar_status());
-            car.setCar_time(car.getCar_time());
-            car.setCar_id(uuid.toString());
             User user = userService.getUser(car.getPhone());
-            car.setCar_sale(user.getUser_id());
-            PicDto2 picDto2 = new PicDto2();
-            picDto2.setPic_car(uuid.toString());
-            picDto2.setPic_main(pic_main);
-            picDto2.setPic_appea1(pic_appea1);
-            picDto2.setPic_appea2(pic_appea2);
-            picDto2.setPic_interior1(pic_interior1);
-            picDto2.setPic_interior2(pic_interior2);
-            if (carService.addCarAndPic(car, picDto2)) {
+            if(user==null){
+                out.print("<script>alert('保存失败，手机号填写有误！');history.go(-1);</script>");
+            }else{
+                UUID uuid = UUID.randomUUID();
+                car.setCar_name(car.getCar_name());
+                car.setCar_brand(car.getCar_brand());
+                car.setCar_dept(car.getCar_dept());
+                car.setCar_price(car.getCar_price());
+                car.setCar_regist(car.getCar_regist());
+                car.setCar_mile(car.getCar_mile());
+                car.setCar_at(car.getCar_at());
+                car.setCar_dc(car.getCar_dc());
+                car.setCar_newprice(car.getCar_newprice());
+                car.setCar_transfer(car.getCar_transfer());
+                car.setCar_power(car.getCar_power());
+                car.setCar_adress(car.getS_city());
+                car.setCar_endurance(car.getCar_endurance());
+                car.setCar_capacity(car.getCar_capacity());
+                car.setCar_color(car.getCar_color());
+                car.setCar_producetime(car.getCar_producetime());
+                car.setCar_keynum(car.getCar_keynum());
+                car.setCar_status(car.getCar_status());
+                car.setCar_time(car.getCar_time());
+                car.setCar_id(uuid.toString());
 
-                out.print("<script>alert('保存成功');location.href='addCar.jsp';</script>");
-            } else {
-                out.print("<script>alert('保存失败');history.go(-1);</script>");
+                car.setCar_sale(user.getUser_id());
+                PicDto2 picDto2 = new PicDto2();
+                picDto2.setPic_car(uuid.toString());
+                picDto2.setPic_main(pic_main);
+                picDto2.setPic_appea1(pic_appea1);
+                picDto2.setPic_appea2(pic_appea2);
+                picDto2.setPic_interior1(pic_interior1);
+                picDto2.setPic_interior2(pic_interior2);
+                if (carService.addCarAndPic(car, picDto2)) {
+
+                    out.print("<script>alert('保存成功');location.href='addCar.jsp';</script>");
+                } else {
+                    out.print("<script>alert('保存失败');history.go(-1);</script>");
+                }
             }
 
 

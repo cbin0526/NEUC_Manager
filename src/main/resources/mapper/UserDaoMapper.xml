@@ -39,6 +39,9 @@ mapper.xml以statement为单位管理sql语句
         <if test="user_id!=null">
             and user_id=#{user_id}
         </if>
+        <if test="user_phone!=null">
+            and user_phone like #{user_phone}
+        </if>
         <if test="user_name!=null">
             and user_name like #{user_name}
         </if>
@@ -64,5 +67,6 @@ mapper.xml以statement为单位管理sql语句
             <include refid="usercondition"></include>
         </where>
     </select>
+
 </mapper>
 

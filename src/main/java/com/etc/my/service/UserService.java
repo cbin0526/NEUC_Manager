@@ -3,9 +3,11 @@ package com.etc.my.service;
 import com.etc.my.dto.CountDto;
 import com.etc.my.dto.UserDto;
 import com.etc.my.entity.User;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.formula.functions.Count;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserService {
 
@@ -49,4 +51,11 @@ public interface UserService {
      * @return 符合条件的用户数量
      */
     CountDto getUserCountWithCondition(UserDto user);
+
+    /**
+     * 导出用户数据的Excel
+     * @param map
+     * @return
+     */
+    HSSFWorkbook exportExcel(Map<String, Object> map);
 }
